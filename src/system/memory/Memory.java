@@ -17,22 +17,22 @@ public class Memory
         Memory.ref = this;
     }
 
-    public Memory push(Reference reference, Object object)
+    public static Memory push(Reference reference, Object object)
     {
         Memory.ref.instance.push(reference,object);
 
-        return this;
+        return ref;
     }
 
-    public Object pull(Reference reference)
+    public static Object pull(Reference reference)
     {
         return Memory.ref.instance.pull(reference);
     }
 
-    public Memory free(Reference reference)
+    public static Memory free(Reference reference)
     {
         Memory.ref.instance.free(reference);
 
-        return this;
+        return ref;
     }
 }

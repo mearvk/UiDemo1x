@@ -21,7 +21,7 @@ public class System
 
         //
 
-        Memory.ref.instance.push(new Reference("//build"), new Build());
+        Memory.push(new Reference("//build"), new Build());
 
         //
 
@@ -33,7 +33,7 @@ public class System
 
         //
 
-        Memory.ref.instance.free(new Reference("//build"));
+        Memory.free(new Reference("//build"));
 
 
     }
