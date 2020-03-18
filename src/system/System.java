@@ -26,7 +26,9 @@ public class System
 
         build.build();
 
-        build = null;
+        build.postbuild();
+
+        //build = null;
     }
 
     public System(Name name)

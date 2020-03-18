@@ -4,6 +4,7 @@ import system.memory.Memory;
 import system.naming.Name;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Build
 {
@@ -51,11 +52,49 @@ public class Build
     {
         Build.ref = this;
 
-        Memory.ref.instance.push(new Name("//build"), this);
+        Memory.push(new Name("//build"), this);
     }
 
     public Build prebuild()
     {
+        Memory.push(new Name("//jframe"), new JFrame());
+
+        Memory.push(new Name("//jpanel/top"), new JPanel());
+
+        Memory.push(new Name("//jpanel/bottom"), new JPanel());
+
+        Memory.push(new Name("//jmenubar"), new JMenuBar());
+
+        Memory.push(new Name("//jmenu/file"), new JMenu("File"));
+
+        Memory.push(new Name("//jmenu/file/jmenuitem/1"), new JMenu("item1"));
+
+        Memory.push(new Name("//jmenu/file/jmenuitem/2"), new JMenu("item2"));
+
+        Memory.push(new Name("//jmenu/edit"), new JMenu("Edit"));
+
+        Memory.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenu("item1"));
+
+        Memory.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenu("item2"));
+
+        Memory.push(new Name("//jmenu/view"), new JMenu("View"));
+
+        Memory.push(new Name("//jmenu/view/jmenuitem/1"), new JMenu("item1"));
+
+        Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("item2"));
+
+        Memory.push(new Name("//jtextpane/url"), new JTextPane());
+
+        Memory.push(new Name("//jbutton/back"), new JButton("back"));
+
+        Memory.push(new Name("//jbutton/forward"), new JButton("forward"));
+
+        Memory.push(new Name("//jbutton/reload"), new JButton("reload"));
+
+        Memory.push(new Name("//jbutton/halt"), new JButton("halt"));
+
+        //
+
         this.jframe = (JFrame)Memory.pull(new Name("//jframe"));
 
         this.jmenubar = (JMenuBar)Memory.pull(new Name("//jmenubar"));
@@ -145,5 +184,21 @@ public class Build
 
         return this;
     }
+
+    public Build postbuild()
+    {
+        this.jframe.setSize(new Dimension(800,600));
+
+        this.jpanel_top.setSize(new Dimension(800, 200));
+
+        this.jpanel_bottom.setSize(new Dimension(800, 400));
+
+        this.jframe.setVisible(true);
+
+        return this;
+    }
+
+
 }
+
 
