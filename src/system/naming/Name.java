@@ -2,12 +2,12 @@ package system.naming;
 
 import system.memory.Memory;
 
-public class Address
+public class Name
 {
     public String value;
 
-    public Address(String value)
+    public Name(String val)
     {
-        this.value = value;
+        this.value = val;
     }
 }

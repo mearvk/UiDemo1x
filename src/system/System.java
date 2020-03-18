@@ -3,12 +3,12 @@ package system;
 
 import system.instance.SystemInstance;
 import system.memory.Memory;
-import system.naming.Address;
+import system.naming.Name;
 import system.ui.Build;
 
 public class System
 {
-    public Address address;
+    public Name name;
 
     public static System ref;
 
@@ -16,7 +16,7 @@ public class System
 
     public static void main(String...args)
     {
-        System system = new System(new Address("//system"));
+        System system = new System(new Name("//system"));
 
         //
 
@@ -29,23 +29,23 @@ public class System
         build = null;
     }
 
-    public System(Address address)
+    public System(Name name)
     {
-        Memory memory = new Memory(new Address("//memory"));
+        Memory memory = new Memory(new Name("//memory"));
 
         //
 
         System.ref = this;
 
-        System.ref.instance = new SystemInstance(new Address("//system/instance"));
+        System.ref.instance = new SystemInstance(new Name("//system/instance"));
 
-        Memory.push(address, this);
+        Memory.push(name, this);
 
         //
 
-        Memory.push(memory.address, memory);
+        Memory.push(memory.name, memory);
 
-        Memory.push(address,this);
+        Memory.push(name,this);
     }
 }
 

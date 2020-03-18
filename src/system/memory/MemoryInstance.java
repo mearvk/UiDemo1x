@@ -1,33 +1,33 @@
 package system.memory;
 
-import system.naming.Address;
+import system.naming.Name;
 
 import java.util.HashMap;
 
 public class MemoryInstance
 {
-    public Address address;
+    public Name name;
 
     public HashMap<String, Object> map = new HashMap<String, Object>();
 
-    public MemoryInstance(Address address)
+    public MemoryInstance(Name name)
     {
-        this.address = address;
+        this.name = name;
     }
 
-    public MemoryInstance push(Address name, Object object)
+    public MemoryInstance push(Name name, Object object)
     {
         Memory.ref.instance.map.put(name.value, object);
 
         return this;
     }
 
-    public Object pull(Address name)
+    public Object pull(Name name)
     {
         return Memory.ref.instance.map.get(name.value);
     }
 
-    public MemoryInstance free(Address name)
+    public MemoryInstance free(Name name)
     {
         Memory.ref.instance.map.put(name.value, null);
 

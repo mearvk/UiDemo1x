@@ -1,25 +1,25 @@
 package system.instance;
 
 import system.memory.Memory;
-import system.naming.Address;
+import system.naming.Name;
 import system.ui.Build;
 
 public class SystemInstance
 {
-    public Address address;
+    public Name name;
 
 
 
-    public SystemInstance(Address address)
+    public SystemInstance(Name name)
     {
-        this.address = address;
+        this.name = name;
 
         //
 
-        Memory.ref.instance.push(new Address("//build"), new Build());
+        Memory.ref.instance.push(new Name("//build"), new Build());
 
         //
 
-        Build build = (Build)Memory.ref.instance.pull(new Address("//build"));
+        Build build = (Build)Memory.ref.instance.pull(new Name("//build"));
     }
 }

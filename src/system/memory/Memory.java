@@ -1,37 +1,37 @@
 package system.memory;
 
-import system.naming.Address;
+import system.naming.Name;
 
 public class Memory
 {
-    public Address address;
+    public Name name;
 
     public static Memory ref;
 
-    public MemoryInstance instance = new MemoryInstance( new Address("//memory/instance"));
+    public MemoryInstance instance = new MemoryInstance( new Name("//memory/instance"));
 
-    public Memory(Address address)
+    public Memory(Name name)
     {
-        this.address = address;
+        this.name = name;
 
         Memory.ref = this;
     }
 
-    public static Memory push(Address address, Object object)
+    public static Memory push(Name name, Object object)
     {
-        Memory.ref.instance.push(address,object);
+        Memory.ref.instance.push(name,object);
 
         return ref;
     }
 
-    public static Object pull(Address address)
+    public static Object pull(Name name)
     {
-        return Memory.ref.instance.pull(address);
+        return Memory.ref.instance.pull(name);
     }
 
-    public static Memory free(Address address)
+    public static Memory free(Name name)
     {
-        Memory.ref.instance.free(address);
+        Memory.ref.instance.free(name);
 
         return ref;
     }
