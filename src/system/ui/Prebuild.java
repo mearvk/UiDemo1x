@@ -1,19 +1,14 @@
+package system.ui;
+
 import system.memory.Memory;
 import system.naming.Reference;
 import system.System;
 
 import javax.swing.*;
 
-public class Main
+public class Prebuild
 {
-    JFrame jFrame = new JFrame();
-
-    public static void main(String...args)
-    {
-        Main main = new Main();
-    }
-
-    public Main()
+    public Prebuild()
     {
         Memory.ref.instance.push(new Reference("//jframe"), new JFrame());
 
@@ -25,21 +20,21 @@ public class Main
 
         Memory.ref.instance.push(new Reference("//jmenu/file"), new JMenu("file"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/file/jmenuitem/1"), new JMenu("item1"));
+        Memory.ref.instance.push(new Reference("//jmenu/file/jmenuitem/1"), new JMenu("item1"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/file/jmenuitem/2"), new JMenu("item2"));
+        Memory.ref.instance.push(new Reference("//jmenu/file/jmenuitem/2"), new JMenu("item2"));
 
         Memory.ref.instance.push(new Reference("//jmenu/edit"), new JMenu("edit"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/edit/jmenuitem/1"), new JMenu("item1"));
+        Memory.ref.instance.push(new Reference("//jmenu/edit/jmenuitem/1"), new JMenu("item1"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/edit/jmenuitem/2"), new JMenu("item2"));
+        Memory.ref.instance.push(new Reference("//jmenu/edit/jmenuitem/2"), new JMenu("item2"));
 
         Memory.ref.instance.push(new Reference("//jmenu/view"), new JMenu("view"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/view/jmenuitem/1"), new JMenu("item1"));
+        Memory.ref.instance.push(new Reference("//jmenu/view/jmenuitem/1"), new JMenu("item1"));
 
-            Memory.ref.instance.push(new Reference("//jmenu/view/jmenuitem/2"), new JMenu("item2"));
+        Memory.ref.instance.push(new Reference("//jmenu/view/jmenuitem/2"), new JMenu("item2"));
 
         Memory.ref.instance.push(new Reference("//jtextpane/url"), new JTextPane());
 

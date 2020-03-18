@@ -5,51 +5,51 @@ import system.naming.Reference;
 
 import javax.swing.*;
 
-public class Builder
+public class Build
 {
-    public static Builder ref;
+    public static Build ref;
 
     JFrame jframe;
 
-        JMenuBar jmenubar;
+    JMenuBar jmenubar;
 
-            JMenu jmenu_file;
+    JMenu jmenu_file;
 
-                JMenuItem jmenuitem_file_1;
+    JMenuItem jmenuitem_file_1;
 
-                JMenuItem jmenuitem_file_2;
+    JMenuItem jmenuitem_file_2;
 
-            JMenu jmenu_edit;
+    JMenu jmenu_edit;
 
-                JMenuItem jmenuitem_edit_1;
+    JMenuItem jmenuitem_edit_1;
 
-                JMenuItem jmenuitem_edit_2;
+    JMenuItem jmenuitem_edit_2;
 
-            JMenu jmenu_view;
+    JMenu jmenu_view;
 
-                JMenuItem jmenuitem_view_1;
+    JMenuItem jmenuitem_view_1;
 
-                JMenuItem jmenuitem_view_2;
+    JMenuItem jmenuitem_view_2;
 
-        JPanel jpanel_top;
+    JPanel jpanel_top;
 
-            JTextPane jtextpane_url;
+    JTextPane jtextpane_url;
 
-            JButton jbutton_back;
+    JButton jbutton_back;
 
-            JButton jbutton_forward;
+    JButton jbutton_forward;
 
-            JButton jbutton_reload;
+    JButton jbutton_reload;
 
-            JButton jbutton_halt;
+    JButton jbutton_halt;
 
-        JPanel jpanel_bottom;
+    JPanel jpanel_bottom;
 
-            JEditorPane jeditorpane;
+    JEditorPane jeditorpane;
 
-    public Builder()
+    public Build()
     {
-        Builder.ref = this;
+        Build.ref = this;
 
         this.jframe = (JFrame)Memory.ref.instance.pull(new Reference("//jframe"));
 
@@ -90,7 +90,7 @@ public class Builder
         this.jeditorpane = (JEditorPane)Memory.ref.instance.pull(new Reference("//jeditorpane/html"));
     }
 
-    public Builder build()
+    public Build build()
     {
         this.jframe.add(this.jpanel_top);
 
@@ -118,6 +118,25 @@ public class Builder
 
         this.jmenu_edit.add(this.jmenuitem_edit_2);
 
+        //
+
+        this.jmenu_view.add(this.jmenuitem_view_1);
+
+        this.jmenu_view.add(this.jmenuitem_view_2);
+
+        //
+
+        this.jpanel_top.add(this.jtextpane_url);
+
+        this.jpanel_top.add(this.jbutton_back);
+
+        this.jpanel_top.add(this.jbutton_halt);
+
+        this.jpanel_top.add(this.jbutton_reload);
+
+        this.jpanel_top.add(this.jbutton_forward);
+
         return this;
     }
 }
+

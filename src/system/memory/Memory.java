@@ -8,7 +8,7 @@ public class Memory
 
     public static Memory ref;
 
-    public MemoryInstance instance;
+    public MemoryInstance instance = new MemoryInstance( new Reference("//memory/instance"));
 
     public Memory(Reference reference)
     {
