@@ -6,8 +6,8 @@ public class Reference
 {
     public String value;
 
-    public Reference(String name)
+    public Reference(String value)
     {
-        this.value = name;
+        this.value = value;
     }
 }

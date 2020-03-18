@@ -25,7 +25,7 @@ public class System
 
         //
 
-        Build build = (Build)Memory.ref.instance.pull(new Reference("//build"));
+        Build build = (Build)Memory.pull(new Reference("//build"));
 
         build.prebuild();
 
@@ -44,13 +44,13 @@ public class System
 
         System.ref.instance = new SystemInstance(new Reference("//system/instance"));
 
-        System.ref.reference = reference;
+        Memory.push(reference, this);
 
         //
 
-        Memory.ref.instance.push(memory.reference, memory);
+        Memory.push(memory.reference, memory);
 
-        Memory.ref.instance.push(reference,this);
+        Memory.push(reference,this);
     }
 }
 
