@@ -15,7 +15,7 @@ public class Builder
 
         JFrame jframe = (JFrame)Memory.ref.instance.pull(new Reference("//jframe"));
 
-            JMenuBar jmenubar = (JMenuBar)Memory.ref.instance.pull(new Reference("//"));
+            JMenuBar jmenubar = (JMenuBar)Memory.ref.instance.pull(new Reference("//jmenubar"));
 
                 JMenu jmenu_file = (JMenu)Memory.ref.instance.pull(new Reference("//jmenu/file"));
 
