@@ -16,10 +16,10 @@ public class SystemInstance
 
         //
 
-        Memory.ref.instance.push(new Name("//build"), new Build());
+        //Memory.ref.instance.push(new Name("//build"), new Build());
 
         //
 
-        Build build = (Build)Memory.ref.instance.pull(new Name("//build"));
+        //Build build = (Build)Memory.ref.instance.pull(new Name("//build"));
     }
 }

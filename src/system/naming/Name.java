@@ -6,8 +6,8 @@ public class Name
 {
     public String value;
 
-    public Name(String val)
+    public Name(String name)
     {
-        this.value = val;
+        this.value = name;
     }
 }
