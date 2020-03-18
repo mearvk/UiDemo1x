@@ -1,5 +1,7 @@
 package system.naming;
 
+import system.memory.Memory;
+
 public class Reference
 {
     public String value;

@@ -1,24 +1,18 @@
 package system.instance;
 
-import system.memory.Memory;
 import system.naming.Reference;
+import system.ui.Builder;
 
 public class SystemInstance
 {
-    public Reference name;
+    public Reference reference;
 
-    public SystemInstance(Reference name)
+    public Builder builder;
+
+    public SystemInstance(Reference reference)
     {
-        this.name = name;
+        this.reference = reference;
     }
 
-    public void push(Reference name, Object object)
-    {
-        Memory.ref.instance.map.put(name,object);
-    }
 
-    public Object pull(Reference name)
-    {
-        return Memory.ref.instance.map.get(name);
-    }
 }

@@ -1,3 +1,4 @@
+import system.memory.Memory;
 import system.naming.Reference;
 import system.System;
 
@@ -14,11 +15,20 @@ public class Main
 
     public Main()
     {
-        System.ref.instance.push(new Reference("//jframe"), new JFrame());
+        Memory.ref.instance.push(new Reference("//jframe"), new JFrame());
 
-        System.ref.instance.push(new Reference("//jpanel/top"), new JPanel());
+        Memory.ref.instance.push(new Reference("//jpanel/top"), new JPanel());
 
-        System.ref.instance.push(new Reference("//jpanel/bottom"), new JPanel());
+        Memory.ref.instance.push(new Reference("//jpanel/bottom"), new JPanel());
+
+        Memory.ref.instance.push(new Reference("//jtextpane"), new JFrame());
+
+        Memory.ref.instance.push(new Reference("//button/back"), new JButton());
+
+        Memory.ref.instance.push(new Reference("//button/forward"), new JButton());
+
+        Memory.ref.instance.push(new Reference("//button/reload"), new JButton());
+
+        Memory.ref.instance.push(new Reference("//button/stop"), new JButton());
     }
 }
-

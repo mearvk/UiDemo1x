@@ -10,14 +10,10 @@ public class Memory
 
     public MemoryInstance instance;
 
-
-
     public Memory(Reference pointer)
     {
         this.pointer = pointer;
 
         Memory.ref = this;
     }
-
-
 }
