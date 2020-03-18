@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class MemoryInstance
 {
-    public HashMap<Reference, Object> map = new HashMap<Reference,Object>();
+    public HashMap<String, Object> map = new HashMap<String, Object>();
 
     public MemoryInstance(Reference pointer)
     {
@@ -15,11 +15,11 @@ public class MemoryInstance
 
     public void push(Reference name, Object object)
     {
-        Memory.ref.instance.map.put(name, object);
+        Memory.ref.instance.map.put(name.value, object);
     }
 
     public Object pull(Reference name)
     {
-        return Memory.ref.instance.map.get(name);
+        return Memory.ref.instance.map.get(name.value);
     }
 }
