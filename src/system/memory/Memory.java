@@ -16,4 +16,23 @@ public class Memory
 
         Memory.ref = this;
     }
+
+    public Memory push(Reference reference, Object object)
+    {
+        Memory.ref.instance.push(reference,object);
+
+        return this;
+    }
+
+    public Object pull(Reference reference)
+    {
+        return Memory.ref.instance.pull(reference);
+    }
+
+    public Memory free(Reference reference)
+    {
+        Memory.ref.instance.free(reference);
+
+        return this;
+    }
 }

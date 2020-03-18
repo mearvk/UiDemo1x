@@ -19,9 +19,23 @@ public class System
     {
         System system = new System(new Memory(new Reference("//memory")), new Reference("//system"));
 
-        Prebuild prebuild = new Prebuild();
+        //
 
-        Build build = new Build();
+        Memory.ref.instance.push(new Reference("//build"), new Build());
+
+        //
+
+        Build build = (Build)Memory.ref.instance.pull(new Reference("//build"));
+
+        build.prebuild();
+
+        build.build();
+
+        //
+
+        Memory.ref.instance.free(new Reference("//build"));
+
+
     }
 
     public System(Memory memory, Reference reference)

@@ -51,10 +51,10 @@ public class Build
     {
         Build.ref = this;
 
-
+        Memory.ref.instance.push(new Reference("//build"), this);
     }
 
-    public Build build()
+    public Build prebuild()
     {
         this.jframe = (JFrame)Memory.ref.instance.pull(new Reference("//jframe"));
 
@@ -94,8 +94,11 @@ public class Build
 
         this.jeditorpane = (JEditorPane)Memory.ref.instance.pull(new Reference("//jeditorpane/html"));
 
-        //
+        return this;
+    }
 
+    public Build build()
+    {
         this.jframe.add(this.jpanel_top);
 
         this.jframe.add(this.jpanel_bottom);

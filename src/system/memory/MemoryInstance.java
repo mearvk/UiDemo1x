@@ -15,13 +15,22 @@ public class MemoryInstance
         this.reference = reference;
     }
 
-    public void push(Reference name, Object object)
+    public MemoryInstance push(Reference name, Object object)
     {
         Memory.ref.instance.map.put(name.value, object);
+
+        return this;
     }
 
     public Object pull(Reference name)
     {
         return Memory.ref.instance.map.get(name.value);
+    }
+
+    public MemoryInstance free(Reference name)
+    {
+        Memory.ref.instance.map.put(name.value, null);
+
+        return this;
     }
 }
