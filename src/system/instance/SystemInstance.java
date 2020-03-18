@@ -13,6 +13,4 @@ public class SystemInstance
     {
         this.reference = reference;
     }
-
-
 }
