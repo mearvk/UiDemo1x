@@ -4,15 +4,15 @@ import system.naming.Reference;
 
 public class Memory
 {
-    public Reference pointer;
+    public Reference reference;
 
     public static Memory ref;
 
     public MemoryInstance instance;
 
-    public Memory(Reference pointer)
+    public Memory(Reference reference)
     {
-        this.pointer = pointer;
+        this.reference = reference;
 
         Memory.ref = this;
     }
