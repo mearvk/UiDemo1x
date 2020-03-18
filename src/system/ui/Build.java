@@ -51,6 +51,11 @@ public class Build
     {
         Build.ref = this;
 
+
+    }
+
+    public Build build()
+    {
         this.jframe = (JFrame)Memory.ref.instance.pull(new Reference("//jframe"));
 
         this.jmenubar = (JMenuBar)Memory.ref.instance.pull(new Reference("//jmenubar"));
@@ -88,10 +93,9 @@ public class Build
         this.jpanel_bottom = (JPanel)Memory.ref.instance.pull(new Reference("//jpanel/bottom"));
 
         this.jeditorpane = (JEditorPane)Memory.ref.instance.pull(new Reference("//jeditorpane/html"));
-    }
 
-    public Build build()
-    {
+        //
+
         this.jframe.add(this.jpanel_top);
 
         this.jframe.add(this.jpanel_bottom);

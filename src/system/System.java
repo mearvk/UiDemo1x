@@ -19,7 +19,7 @@ public class System
     {
         System system = new System(new Memory(new Reference("//memory")), new Reference("//system"));
 
-        Prebuild main = new Prebuild();
+        Prebuild prebuild = new Prebuild();
 
         Build build = new Build();
     }
