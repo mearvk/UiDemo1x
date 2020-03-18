@@ -9,43 +9,43 @@ public class Build
 {
     public static Build ref;
 
-    JFrame jframe;
+    public JFrame jframe;
 
-    JMenuBar jmenubar;
+    public JMenuBar jmenubar;
 
-    JMenu jmenu_file;
+    public JMenu jmenu_file;
 
-    JMenuItem jmenuitem_file_1;
+    public JMenuItem jmenuitem_file_1;
 
-    JMenuItem jmenuitem_file_2;
+    public JMenuItem jmenuitem_file_2;
 
-    JMenu jmenu_edit;
+    public JMenu jmenu_edit;
 
-    JMenuItem jmenuitem_edit_1;
+    public JMenuItem jmenuitem_edit_1;
 
-    JMenuItem jmenuitem_edit_2;
+    public JMenuItem jmenuitem_edit_2;
 
-    JMenu jmenu_view;
+    public JMenu jmenu_view;
 
-    JMenuItem jmenuitem_view_1;
+    public JMenuItem jmenuitem_view_1;
 
-    JMenuItem jmenuitem_view_2;
+    public JMenuItem jmenuitem_view_2;
 
-    JPanel jpanel_top;
+    public JPanel jpanel_top;
 
-    JTextPane jtextpane_url;
+    public JTextPane jtextpane_url;
 
-    JButton jbutton_back;
+    public JButton jbutton_back;
 
-    JButton jbutton_forward;
+    public JButton jbutton_forward;
 
-    JButton jbutton_reload;
+    public JButton jbutton_reload;
 
-    JButton jbutton_halt;
+    public JButton jbutton_halt;
 
-    JPanel jpanel_bottom;
+    public JPanel jpanel_bottom;
 
-    JEditorPane jeditorpane;
+    public JEditorPane jeditorpane;
 
     public Build()
     {
