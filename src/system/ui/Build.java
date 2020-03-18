@@ -1,7 +1,7 @@
 package system.ui;
 
 import system.memory.Memory;
-import system.naming.Reference;
+import system.naming.Address;
 
 import javax.swing.*;
 
@@ -51,48 +51,48 @@ public class Build
     {
         Build.ref = this;
 
-        Memory.ref.instance.push(new Reference("//build"), this);
+        Memory.ref.instance.push(new Address("//build"), this);
     }
 
     public Build prebuild()
     {
-        this.jframe = (JFrame)Memory.ref.instance.pull(new Reference("//jframe"));
+        this.jframe = (JFrame)Memory.pull(new Address("//jframe"));
 
-        this.jmenubar = (JMenuBar)Memory.ref.instance.pull(new Reference("//jmenubar"));
+        this.jmenubar = (JMenuBar)Memory.pull(new Address("//jmenubar"));
 
-        this.jmenu_file = (JMenu)Memory.ref.instance.pull(new Reference("//jmenu/file"));
+        this.jmenu_file = (JMenu)Memory.pull(new Address("//jmenu/file"));
 
-        this.jmenuitem_file_1 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/file/jmenuitem/1"));
+        this.jmenuitem_file_1 = (JMenuItem)Memory.pull(new Address("//jmenu/file/jmenuitem/1"));
 
-        this.jmenuitem_file_2 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/file/jmenuitem/2"));
+        this.jmenuitem_file_2 = (JMenuItem)Memory.pull(new Address("//jmenu/file/jmenuitem/2"));
 
-        this.jmenu_edit = (JMenu)Memory.ref.instance.pull(new Reference("//jmenu/edit"));
+        this.jmenu_edit = (JMenu)Memory.pull(new Address("//jmenu/edit"));
 
-        this.jmenuitem_edit_1 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/edit/jmenuitem/1"));
+        this.jmenuitem_edit_1 = (JMenuItem)Memory.pull(new Address("//jmenu/edit/jmenuitem/1"));
 
-        this.jmenuitem_edit_2 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/edit/jmenuitem/2"));
+        this.jmenuitem_edit_2 = (JMenuItem)Memory.pull(new Address("//jmenu/edit/jmenuitem/2"));
 
-        this.jmenu_view = (JMenu)Memory.ref.instance.pull(new Reference("//jmenu/view"));
+        this.jmenu_view = (JMenu)Memory.pull(new Address("//jmenu/view"));
 
-        this.jmenuitem_view_1 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/view/jmenuitem/1"));
+        this.jmenuitem_view_1 = (JMenuItem)Memory.pull(new Address("//jmenu/view/jmenuitem/1"));
 
-        this.jmenuitem_view_2 = (JMenuItem)Memory.ref.instance.pull(new Reference("//jmenu/view/jmenuitem/2"));
+        this.jmenuitem_view_2 = (JMenuItem)Memory.pull(new Address("//jmenu/view/jmenuitem/2"));
 
-        this.jpanel_top = (JPanel)Memory.ref.instance.pull(new Reference("//jpanel/top"));
+        this.jpanel_top = (JPanel)Memory.pull(new Address("//jpanel/top"));
 
-        this.jtextpane_url = (JTextPane)Memory.ref.instance.pull(new Reference("//jtextpane/url"));
+        this.jtextpane_url = (JTextPane)Memory.pull(new Address("//jtextpane/url"));
 
-        this.jbutton_back = (JButton)Memory.ref.instance.pull(new Reference("//jbutton/back"));
+        this.jbutton_back = (JButton)Memory.pull(new Address("//jbutton/back"));
 
-        this.jbutton_forward = (JButton)Memory.ref.instance.pull(new Reference("//jbutton/forward"));
+        this.jbutton_forward = (JButton)Memory.pull(new Address("//jbutton/forward"));
 
-        this.jbutton_reload = (JButton)Memory.ref.instance.pull(new Reference("//jbutton/reload"));
+        this.jbutton_reload = (JButton)Memory.pull(new Address("//jbutton/reload"));
 
-        this.jbutton_halt = (JButton) Memory.ref.instance.pull(new Reference("//jbutton/halt"));
+        this.jbutton_halt = (JButton) Memory.pull(new Address("//jbutton/halt"));
 
-        this.jpanel_bottom = (JPanel)Memory.ref.instance.pull(new Reference("//jpanel/bottom"));
+        this.jpanel_bottom = (JPanel)Memory.pull(new Address("//jpanel/bottom"));
 
-        this.jeditorpane = (JEditorPane)Memory.ref.instance.pull(new Reference("//jeditorpane/html"));
+        this.jeditorpane = (JEditorPane)Memory.pull(new Address("//jeditorpane/html"));
 
         return this;
     }

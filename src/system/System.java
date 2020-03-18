@@ -3,13 +3,12 @@ package system;
 
 import system.instance.SystemInstance;
 import system.memory.Memory;
-import system.naming.Reference;
+import system.naming.Address;
 import system.ui.Build;
-import system.ui.Prebuild;
 
 public class System
 {
-    public Reference reference;
+    public Address address;
 
     public static System ref;
 
@@ -17,40 +16,36 @@ public class System
 
     public static void main(String...args)
     {
-        System system = new System(new Memory(new Reference("//memory")), new Reference("//system"));
+        System system = new System(new Address("//system"));
 
         //
 
-        Memory.push(new Reference("//build"), new Build());
-
-        //
-
-        Build build = (Build)Memory.pull(new Reference("//build"));
+        Build build = new Build();
 
         build.prebuild();
 
         build.build();
 
-        //
-
-        Memory.free(new Reference("//build"));
-
-
+        build = null;
     }
 
-    public System(Memory memory, Reference reference)
+    public System(Address address)
     {
-        System.ref = this;
-
-        System.ref.instance = new SystemInstance(new Reference("//system/instance"));
-
-        Memory.push(reference, this);
+        Memory memory = new Memory(new Address("//memory"));
 
         //
 
-        Memory.push(memory.reference, memory);
+        System.ref = this;
 
-        Memory.push(reference,this);
+        System.ref.instance = new SystemInstance(new Address("//system/instance"));
+
+        Memory.push(address, this);
+
+        //
+
+        Memory.push(memory.address, memory);
+
+        Memory.push(address,this);
     }
 }
 

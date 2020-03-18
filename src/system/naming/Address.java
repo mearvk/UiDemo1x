@@ -2,11 +2,11 @@ package system.naming;
 
 import system.memory.Memory;
 
-public class Reference
+public class Address
 {
     public String value;
 
-    public Reference(String value)
+    public Address(String value)
     {
         this.value = value;
     }
