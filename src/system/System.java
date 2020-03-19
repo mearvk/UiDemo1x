@@ -4,7 +4,7 @@ package system;
 import system.instance.SystemInstance;
 import system.memory.Memory;
 import system.naming.Name;
-import system.ui.Build;
+import system.ui.Builder;
 
 import javax.swing.*;
 
@@ -37,13 +37,15 @@ public class System
 
         //
 
-        Build build = new Build();
+        Builder build = new Builder();
 
-        build.prebuild();
+        build.builder_001 = new Builder.Builder_001();
 
-        build.build();
+        build.builder_002 = new Builder.Builder_002();
 
-        build.postbuild();
+        build.builder_003 = new Builder.Builder_003();
+
+        build.builder_004 = new Builder.Builder_004();
 
         //build = null;
     }
@@ -67,4 +69,6 @@ public class System
         Memory.push(name,this);
     }
 }
+
+
 

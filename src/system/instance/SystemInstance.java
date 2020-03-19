@@ -1,8 +1,6 @@
 package system.instance;
 
-import system.memory.Memory;
 import system.naming.Name;
-import system.ui.Build;
 
 public class SystemInstance
 {
