@@ -4,6 +4,7 @@ import system.memory.Memory;
 import system.naming.Name;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 
 public class UI_Builder
@@ -79,21 +80,21 @@ public class UI_Builder
 
             Memory.push(new Name("//jmenu/file"), new JMenu("File"));
 
-            Memory.push(new Name("//jmenu/file/jmenuitem/1"), new JMenu("Item 1"));
+            Memory.push(new Name("//jmenu/file/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            Memory.push(new Name("//jmenu/file/jmenuitem/2"), new JMenu("Item 2"));
+            Memory.push(new Name("//jmenu/file/jmenuitem/2"), new JMenuItem("Item 2"));
 
             Memory.push(new Name("//jmenu/edit"), new JMenu("Edit"));
 
-            Memory.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenu("Item 1"));
+            Memory.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            Memory.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenu("Item 2"));
+            Memory.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenuItem("Item 2"));
 
             Memory.push(new Name("//jmenu/view"), new JMenu("View"));
 
-            Memory.push(new Name("//jmenu/view/jmenuitem/1"), new JMenu("Item 1"));
+            Memory.push(new Name("//jmenu/view/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("Item 2"));
+            Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenuItem("Item 2"));
 
             Memory.push(new Name("//jtextpane/url"), new JTextPaneUrl());
 
@@ -160,42 +161,51 @@ public class UI_Builder
 
         public BuildStep_003()
         {
+            JFrame jframe  = (JFrame)Memory.pull(new Name("//jframe"));
 
-            UI_Builder.ref.jframe.add(UI_Builder.ref.jpanel_top);
+            jframe.add(UI_Builder.ref.jpanel_top);
 
-            UI_Builder.ref.jframe.add(UI_Builder.ref.jpanel_bottom);
+            jframe.add(UI_Builder.ref.jpanel_bottom);
 
-            UI_Builder.ref.jframe.setJMenuBar(UI_Builder.ref.jmenubar);
-
-            //
-
-            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_file);
-
-            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_edit);
-
-            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_view);
+            jframe.setJMenuBar(UI_Builder.ref.jmenubar);
 
             //
 
-            UI_Builder.ref.jmenu_file.add(UI_Builder.ref.jmenuitem_file_1);
+            JMenuBar jmenubar = (JMenuBar)Memory.pull(new Name("//jmenubar"));
 
-            UI_Builder.ref.jmenu_file.add(UI_Builder.ref.jmenuitem_file_2);
+            jmenubar.add(UI_Builder.ref.jmenu_file);
 
-            //
+            jmenubar.add(UI_Builder.ref.jmenu_edit);
 
-            UI_Builder.ref.jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_1);
-
-            UI_Builder.ref.jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_2);
+            jmenubar.add(UI_Builder.ref.jmenu_view);
 
             //
 
-            UI_Builder.ref.jmenu_view.add(UI_Builder.ref.jmenuitem_view_1);
+            JMenu jmenu_file = (JMenu)Memory.pull(new Name("//jmenu/file"));
 
-            UI_Builder.ref.jmenu_view.add(UI_Builder.ref.jmenuitem_view_2);
+            jmenu_file.add(UI_Builder.ref.jmenuitem_file_1);
+
+            jmenu_file.add(UI_Builder.ref.jmenuitem_file_2);
 
             //
 
-            JPanel jpanel_top = (JPanel)Memory.pull(new Name("//jpanel/top"));
+            JMenu jmenu_edit = (JMenu)Memory.pull(new Name("//jmenu/edit"));
+
+            jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_1);
+
+            jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_2);
+
+            //
+
+            JMenu jmenu_view = (JMenu)Memory.pull(new Name("//jmenu/view"));
+
+            jmenu_view.add(UI_Builder.ref.jmenuitem_view_1);
+
+            jmenu_view.add(UI_Builder.ref.jmenuitem_view_2);
+
+            //
+
+            JPanelTop jpanel_top = (JPanelTop)Memory.pull(new Name("//jpanel/top"));
 
             jpanel_top.add(UI_Builder.ref.jbutton_back);
 
@@ -209,7 +219,7 @@ public class UI_Builder
 
             //
 
-            JPanel jpanel_bottom = (JPanel)Memory.pull(new Name("//jpanel/bottom"));
+            JPanelBottom jpanel_bottom = (JPanelBottom)Memory.pull(new Name("//jpanel/bottom"));
 
             jpanel_bottom.add(UI_Builder.ref.jeditorpane);
 
@@ -237,23 +247,19 @@ public class UI_Builder
 
             JPanel jpanel_top = (JPanel)Memory.pull(new Name("//jpanel/top"));
 
-            jpanel_top.setSize(new Dimension(800, 200));
-
-            jpanel_top.setBackground(Color.GRAY.darker());
+            jpanel_top.setBackground(Color.WHITE);
 
             //
 
-            JTextPane jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
+            JTextPaneUrl jtextpane_url = (JTextPaneUrl)Memory.pull(new Name("//jtextpane/url"));
 
-            jtextpane_url.setPreferredSize(new Dimension(600, 20));
+            jtextpane_url.setBorder(new BevelBorder(1,Color.WHITE.darker(),Color.WHITE.darker(),Color.GRAY,Color.GRAY));
 
             //
 
             JPanel jpanel_bottom = (JPanel)Memory.pull(new Name("//jpanel/bottom"));
 
-            jpanel_bottom.setSize(new Dimension(800, 400));
-
-            jpanel_bottom.setBackground(Color.GRAY.brighter());
+            jpanel_bottom.setBackground(Color.WHITE);
 
             //
 
