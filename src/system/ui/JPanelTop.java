@@ -15,7 +15,7 @@ public class JPanelTop extends JPanel
 
         int width = jframe.getWidth();
 
-        int height = jframe.getHeight() * 1 / 10;
+        int height = 50;
 
         System.out.println("Parent: "+getParent());
 

@@ -15,5 +15,4 @@ public class JTextPaneURL extends JTextPane
 
         return new Dimension(jframe.getWidth()-280, 20);
     }
-
 }
