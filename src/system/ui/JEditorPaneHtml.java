@@ -6,7 +6,7 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class HTMLPane extends JEditorPane
+public class JEditorPaneHtml extends JEditorPane
 {
     @Override
     public Dimension getPreferredSize()

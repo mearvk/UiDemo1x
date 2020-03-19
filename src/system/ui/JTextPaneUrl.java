@@ -6,7 +6,7 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class JTextPaneURL extends JTextPane
+public class JTextPaneUrl extends JTextPane
 {
     @Override
     public Dimension getPreferredSize()

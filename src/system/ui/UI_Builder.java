@@ -32,7 +32,7 @@ public class UI_Builder
 
     public JMenuItem jmenuitem_view_2;
 
-    public TopPane jpanel_top;
+    public JPanelTop jpanel_top;
 
     public JTextPane jtextpane_url;
 
@@ -44,9 +44,9 @@ public class UI_Builder
 
     public JButton jbutton_halt;
 
-    public BottomPane jpanel_bottom;
+    public JPanelBottom jpanel_bottom;
 
-    public HTMLPane jeditorpane;
+    public JEditorPaneHtml jeditorpane;
 
     //
 
@@ -71,9 +71,9 @@ public class UI_Builder
         {
             Memory.push(new Name("//jframe"), new JFrame());
 
-            Memory.push(new Name("//jpanel/top"), new TopPane());
+            Memory.push(new Name("//jpanel/top"), new JPanelTop());
 
-            Memory.push(new Name("//jpanel/bottom"), new BottomPane());
+            Memory.push(new Name("//jpanel/bottom"), new JPanelBottom());
 
             Memory.push(new Name("//jmenubar"), new JMenuBar());
 
@@ -95,17 +95,17 @@ public class UI_Builder
 
             Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("Item 2"));
 
-            Memory.push(new Name("//jtextpane/url"), new JTextPaneURL());
+            Memory.push(new Name("//jtextpane/url"), new JTextPaneUrl());
 
-            Memory.push(new Name("//jbutton/back"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\back-16.png")));
+            Memory.push(new Name("//jbutton/back"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-16.png")));
 
-            Memory.push(new Name("//jbutton/forward"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\forward-16.png")));
+            Memory.push(new Name("//jbutton/forward"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-16.png")));
 
-            Memory.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\reload-16.png")));
+            Memory.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\reload-16.png")));
 
-            Memory.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\halt-16.png")));
+            Memory.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\halt-16.png")));
 
-            Memory.push(new Name("//jeditorpane/html"), new HTMLPane());
+            Memory.push(new Name("//jeditorpane/html"), new JEditorPaneHtml());
         }
 
     }
@@ -137,7 +137,7 @@ public class UI_Builder
 
             UI_Builder.ref.jmenuitem_view_2 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/2"));
 
-            UI_Builder.ref.jpanel_top = (TopPane)Memory.pull(new Name("//jpanel/top"));
+            UI_Builder.ref.jpanel_top = (JPanelTop)Memory.pull(new Name("//jpanel/top"));
 
             UI_Builder.ref.jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
 
@@ -149,9 +149,9 @@ public class UI_Builder
 
             UI_Builder.ref.jbutton_halt = (JButton) Memory.pull(new Name("//jbutton/halt"));
 
-            UI_Builder.ref.jpanel_bottom = (BottomPane) Memory.pull(new Name("//jpanel/bottom"));
+            UI_Builder.ref.jpanel_bottom = (JPanelBottom) Memory.pull(new Name("//jpanel/bottom"));
 
-            UI_Builder.ref.jeditorpane = (HTMLPane) Memory.pull(new Name("//jeditorpane/html"));
+            UI_Builder.ref.jeditorpane = (JEditorPaneHtml) Memory.pull(new Name("//jeditorpane/html"));
         }
     }
 
@@ -195,19 +195,23 @@ public class UI_Builder
 
             //
 
-            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_back, BorderLayout.NORTH);
+            JPanel jpanel_top = (JPanel)Memory.pull(new Name("//jpanel/top"));
 
-            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_halt, BorderLayout.EAST);
+            jpanel_top.add(UI_Builder.ref.jbutton_back);
 
-            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_reload);
+            jpanel_top.add(UI_Builder.ref.jbutton_halt);
 
-            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_forward);
+            jpanel_top.add(UI_Builder.ref.jbutton_reload);
 
-            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jtextpane_url);
+            jpanel_top.add(UI_Builder.ref.jbutton_forward);
+
+            jpanel_top.add(UI_Builder.ref.jtextpane_url);
 
             //
 
-            UI_Builder.ref.jpanel_bottom.add(UI_Builder.ref.jeditorpane);
+            JPanel jpanel_bottom = (JPanel)Memory.pull(new Name("//jpanel/bottom"));
+
+            jpanel_bottom.add(UI_Builder.ref.jeditorpane);
 
         }
     }
@@ -217,35 +221,47 @@ public class UI_Builder
 
         public BuildStep_004()
         {
-            UI_Builder.ref.jframe.setSize(new Dimension(1000, 600));
+            JFrame jframe = (JFrame) Memory.pull(new Name("//jframe"));
 
-            UI_Builder.ref.jframe.setLayout(new FlowLayout());
+            jframe.setSize(new Dimension(1000, 600));
 
-            UI_Builder.ref.jframe.setMinimumSize(new Dimension(800, 600));
+            jframe.setLayout(new FlowLayout());
 
-            UI_Builder.ref.jframe.setVisible(true);
+            jframe.setMinimumSize(new Dimension(800, 600));
 
-            //
+            jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            UI_Builder.ref.jpanel_top.setSize(new Dimension(800, 200));
-
-            UI_Builder.ref.jpanel_top.setBackground(Color.GRAY.darker());
-
-            UI_Builder.ref.jtextpane_url.setPreferredSize(new Dimension(600, 20));
-
-            UI_Builder.ref.jpanel_bottom.setSize(new Dimension(800, 400));
-
-            UI_Builder.ref.jpanel_bottom.setBackground(Color.GRAY.brighter());
+            jframe.setVisible(true);
 
             //
 
-            UI_Builder.ref.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JPanel jpanel_top = (JPanel)Memory.pull(new Name("//jpanel/top"));
 
-            //this.jeditorpane.setContentType();
+            jpanel_top.setSize(new Dimension(800, 200));
 
-            UI_Builder.ref.jeditorpane.setContentType("text/html");
+            jpanel_top.setBackground(Color.GRAY.darker());
 
-            UI_Builder.ref.jeditorpane.setText("<html>\n" +
+            //
+
+            JTextPane jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
+
+            jtextpane_url.setPreferredSize(new Dimension(600, 20));
+
+            //
+
+            JPanel jpanel_bottom = (JPanel)Memory.pull(new Name("//jpanel/bottom"));
+
+            jpanel_bottom.setSize(new Dimension(800, 400));
+
+            jpanel_bottom.setBackground(Color.GRAY.brighter());
+
+            //
+
+            JEditorPane jeditorpane = (JEditorPane)Memory.pull(new Name("//jeditorpane/html"));
+
+            jeditorpane.setContentType("text/html");
+
+            jeditorpane.setText("<html>\n" +
                     "   <head>\n" +
                     "      <title>Swing Tester</title>\n" +
                     "   </head>\n" +
