@@ -59,29 +59,29 @@ public class Build
     {
         Memory.push(new Name("//jframe"), new JFrame());
 
-        Memory.push(new Name("//jpanel/top"), new JPanel());
+        Memory.push(new Name("//jpanel/top"), new JPanelTop());
 
-        Memory.push(new Name("//jpanel/bottom"), new JPanel());
+        Memory.push(new Name("//jpanel/bottom"), new JPanelBottom());
 
         Memory.push(new Name("//jmenubar"), new JMenuBar());
 
         Memory.push(new Name("//jmenu/file"), new JMenu("File"));
 
-        Memory.push(new Name("//jmenu/file/jmenuitem/1"), new JMenu("item1"));
+        Memory.push(new Name("//jmenu/file/jmenuitem/1"), new JMenu("Item 1"));
 
-        Memory.push(new Name("//jmenu/file/jmenuitem/2"), new JMenu("item2"));
+        Memory.push(new Name("//jmenu/file/jmenuitem/2"), new JMenu("Item 2"));
 
         Memory.push(new Name("//jmenu/edit"), new JMenu("Edit"));
 
-        Memory.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenu("item1"));
+        Memory.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenu("Item 1"));
 
-        Memory.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenu("item2"));
+        Memory.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenu("Item 2"));
 
         Memory.push(new Name("//jmenu/view"), new JMenu("View"));
 
-        Memory.push(new Name("//jmenu/view/jmenuitem/1"), new JMenu("item1"));
+        Memory.push(new Name("//jmenu/view/jmenuitem/1"), new JMenu("Item 1"));
 
-        Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("item2"));
+        Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("Item 2"));
 
         Memory.push(new Name("//jtextpane/url"), new JTextPane());
 
@@ -172,15 +172,17 @@ public class Build
 
         //
 
-        this.jpanel_top.add(this.jtextpane_url);
 
-        this.jpanel_top.add(this.jbutton_back);
 
-        this.jpanel_top.add(this.jbutton_halt);
+        this.jpanel_top.add(this.jbutton_back, BorderLayout.NORTH);
+
+        this.jpanel_top.add(this.jbutton_halt, BorderLayout.EAST);
 
         this.jpanel_top.add(this.jbutton_reload);
 
         this.jpanel_top.add(this.jbutton_forward);
+
+        this.jpanel_top.add(this.jtextpane_url);
 
         return this;
     }
@@ -189,13 +191,25 @@ public class Build
     {
         this.jframe.setSize(new Dimension(800,600));
 
+        this.jframe.setLayout(new FlowLayout());
+
         this.jpanel_top.setSize(new Dimension(800, 200));
+
+        this.jpanel_top.setBackground(Color.GRAY);
+
+        this.jtextpane_url.setPreferredSize(new Dimension(600, 20));
 
         this.jpanel_bottom.setSize(new Dimension(800, 400));
 
+        this.jpanel_bottom.setBackground(Color.GRAY);
+
         this.jframe.setVisible(true);
 
+        this.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         return this;
+
+
     }
 
 
