@@ -17,8 +17,6 @@ public class JPanelTop extends JPanel
 
         int height = 50;
 
-        System.out.println("Parent: "+getParent());
-
         return new Dimension(width, height);
     }
 

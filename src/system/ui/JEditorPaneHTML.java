@@ -6,13 +6,17 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class JTextPaneURL extends JTextPane
+public class JEditorPaneHTML extends JEditorPane
 {
     @Override
     public Dimension getPreferredSize()
     {
         JFrame jframe = (JFrame) Memory.pull(new Name("//jframe"));
 
-        return new Dimension(jframe.getWidth()-320, 25);
+        int height = jframe.getHeight() - 100;
+
+        int width = jframe.getWidth() - 10;
+
+        return new Dimension(width, height);
     }
 }

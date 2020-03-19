@@ -32,7 +32,7 @@ public class Build
 
     public JMenuItem jmenuitem_view_2;
 
-    public JPanel jpanel_top;
+    public JPanelTop jpanel_top;
 
     public JTextPane jtextpane_url;
 
@@ -44,9 +44,9 @@ public class Build
 
     public JButton jbutton_halt;
 
-    public JPanel jpanel_bottom;
+    public JPanelBottom jpanel_bottom;
 
-    public JEditorPane jeditorpane;
+    public JEditorPaneHTML jeditorpane;
 
     public Build()
     {
@@ -93,7 +93,7 @@ public class Build
 
         Memory.push(new Name("//jbutton/halt"), new JButton("halt"));
 
-        Memory.push(new Name("//jeditorpane/html"), new JEditorPane());
+        Memory.push(new Name("//jeditorpane/html"), new JEditorPaneHTML());
 
         //
 
@@ -119,7 +119,7 @@ public class Build
 
         this.jmenuitem_view_2 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/2"));
 
-        this.jpanel_top = (JPanel)Memory.pull(new Name("//jpanel/top"));
+        this.jpanel_top = (JPanelTop)Memory.pull(new Name("//jpanel/top"));
 
         this.jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
 
@@ -131,9 +131,9 @@ public class Build
 
         this.jbutton_halt = (JButton) Memory.pull(new Name("//jbutton/halt"));
 
-        this.jpanel_bottom = (JPanel)Memory.pull(new Name("//jpanel/bottom"));
+        this.jpanel_bottom = (JPanelBottom) Memory.pull(new Name("//jpanel/bottom"));
 
-        this.jeditorpane = (JEditorPane)Memory.pull(new Name("//jeditorpane/html"));
+        this.jeditorpane = (JEditorPaneHTML) Memory.pull(new Name("//jeditorpane/html"));
 
         return this;
     }
