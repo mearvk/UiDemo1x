@@ -4,13 +4,11 @@ package system;
 import system.instance.SystemInstance;
 import system.memory.Memory;
 import system.naming.Name;
-import system.ui.Builder;
-
-import javax.swing.*;
+import system.ui.UI_Builder;
 
 public class System
 {
-    public Name name;
+    public Name name = new Name("//system");
 
     public static System ref;
 
@@ -22,32 +20,17 @@ public class System
 
         //
 
-        try
-        {
-            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        UI_Builder build = new UI_Builder();
 
-            //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+        build.buildstep_001 = new UI_Builder.BuildStep_001();
 
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        build.buildstep_002 = new UI_Builder.BuildStep_002();
 
-        //
+        build.buildstep_003 = new UI_Builder.BuildStep_003();
 
-        Builder build = new Builder();
+        build.buildstep_004 = new UI_Builder.BuildStep_004();
 
-        build.builder_001 = new Builder.Builder_001();
-
-        build.builder_002 = new Builder.Builder_002();
-
-        build.builder_003 = new Builder.Builder_003();
-
-        build.builder_004 = new Builder.Builder_004();
-
-        //build = null;
+        build = null;
     }
 
     public System(Name name)

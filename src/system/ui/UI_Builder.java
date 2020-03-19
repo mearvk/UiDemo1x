@@ -6,9 +6,9 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class Builder
+public class UI_Builder
 {
-    public static Builder ref;
+    public static UI_Builder ref;
 
     public JFrame jframe;
 
@@ -50,24 +50,24 @@ public class Builder
 
     //
 
-    public Builder_001 builder_001;
+    public BuildStep_001 buildstep_001;
 
-    public Builder_002 builder_002;
+    public BuildStep_002 buildstep_002;
 
-    public Builder_003 builder_003;
+    public BuildStep_003 buildstep_003;
 
-    public Builder_004 builder_004;
+    public BuildStep_004 buildstep_004;
 
-    public Builder()
+    public UI_Builder()
     {
-        Builder.ref = this;
+        UI_Builder.ref = this;
 
         Memory.push(new Name("//build"), this);
     }
 
-    public static class Builder_001
+    public static class BuildStep_001
     {
-        public Builder_001()
+        public BuildStep_001()
         {
             Memory.push(new Name("//jframe"), new JFrame());
 
@@ -97,155 +97,155 @@ public class Builder
 
             Memory.push(new Name("//jtextpane/url"), new JTextPaneURL());
 
-            Memory.push(new Name("//jbutton/back"), new JButton("back"));
+            Memory.push(new Name("//jbutton/back"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\back-16.png")));
 
-            Memory.push(new Name("//jbutton/forward"), new JButton("forward"));
+            Memory.push(new Name("//jbutton/forward"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\forward-16.png")));
 
-            Memory.push(new Name("//jbutton/reload"), new JButton("reload"));
+            Memory.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\reload-16.png")));
 
-            Memory.push(new Name("//jbutton/halt"), new JButton("halt"));
+            Memory.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\halt-16.png")));
 
             Memory.push(new Name("//jeditorpane/html"), new HTMLPane());
         }
 
     }
 
-    public static class Builder_002
+    public static class BuildStep_002
     {
 
-        public Builder_002()
+        public BuildStep_002()
         {
-            Builder.ref.jframe = (JFrame)Memory.pull(new Name("//jframe"));
+            UI_Builder.ref.jframe = (JFrame)Memory.pull(new Name("//jframe"));
 
-            Builder.ref.jmenubar = (JMenuBar)Memory.pull(new Name("//jmenubar"));
+            UI_Builder.ref.jmenubar = (JMenuBar)Memory.pull(new Name("//jmenubar"));
 
-            Builder.ref.jmenu_file = (JMenu)Memory.pull(new Name("//jmenu/file"));
+            UI_Builder.ref.jmenu_file = (JMenu)Memory.pull(new Name("//jmenu/file"));
 
-            Builder.ref.jmenuitem_file_1 = (JMenuItem)Memory.pull(new Name("//jmenu/file/jmenuitem/1"));
+            UI_Builder.ref.jmenuitem_file_1 = (JMenuItem)Memory.pull(new Name("//jmenu/file/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_file_2 = (JMenuItem)Memory.pull(new Name("//jmenu/file/jmenuitem/2"));
+            UI_Builder.ref.jmenuitem_file_2 = (JMenuItem)Memory.pull(new Name("//jmenu/file/jmenuitem/2"));
 
-            Builder.ref.jmenu_edit = (JMenu)Memory.pull(new Name("//jmenu/edit"));
+            UI_Builder.ref.jmenu_edit = (JMenu)Memory.pull(new Name("//jmenu/edit"));
 
-            Builder.ref.jmenuitem_edit_1 = (JMenuItem)Memory.pull(new Name("//jmenu/edit/jmenuitem/1"));
+            UI_Builder.ref.jmenuitem_edit_1 = (JMenuItem)Memory.pull(new Name("//jmenu/edit/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_edit_2 = (JMenuItem)Memory.pull(new Name("//jmenu/edit/jmenuitem/2"));
+            UI_Builder.ref.jmenuitem_edit_2 = (JMenuItem)Memory.pull(new Name("//jmenu/edit/jmenuitem/2"));
 
-            Builder.ref.jmenu_view = (JMenu)Memory.pull(new Name("//jmenu/view"));
+            UI_Builder.ref.jmenu_view = (JMenu)Memory.pull(new Name("//jmenu/view"));
 
-            Builder.ref.jmenuitem_view_1 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/1"));
+            UI_Builder.ref.jmenuitem_view_1 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_view_2 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/2"));
+            UI_Builder.ref.jmenuitem_view_2 = (JMenuItem)Memory.pull(new Name("//jmenu/view/jmenuitem/2"));
 
-            Builder.ref.jpanel_top = (TopPane)Memory.pull(new Name("//jpanel/top"));
+            UI_Builder.ref.jpanel_top = (TopPane)Memory.pull(new Name("//jpanel/top"));
 
-            Builder.ref.jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
+            UI_Builder.ref.jtextpane_url = (JTextPane)Memory.pull(new Name("//jtextpane/url"));
 
-            Builder.ref.jbutton_back = (JButton)Memory.pull(new Name("//jbutton/back"));
+            UI_Builder.ref.jbutton_back = (JButton)Memory.pull(new Name("//jbutton/back"));
 
-            Builder.ref.jbutton_forward = (JButton)Memory.pull(new Name("//jbutton/forward"));
+            UI_Builder.ref.jbutton_forward = (JButton)Memory.pull(new Name("//jbutton/forward"));
 
-            Builder.ref.jbutton_reload = (JButton)Memory.pull(new Name("//jbutton/reload"));
+            UI_Builder.ref.jbutton_reload = (JButton)Memory.pull(new Name("//jbutton/reload"));
 
-            Builder.ref.jbutton_halt = (JButton) Memory.pull(new Name("//jbutton/halt"));
+            UI_Builder.ref.jbutton_halt = (JButton) Memory.pull(new Name("//jbutton/halt"));
 
-            Builder.ref.jpanel_bottom = (BottomPane) Memory.pull(new Name("//jpanel/bottom"));
+            UI_Builder.ref.jpanel_bottom = (BottomPane) Memory.pull(new Name("//jpanel/bottom"));
 
-            Builder.ref.jeditorpane = (HTMLPane) Memory.pull(new Name("//jeditorpane/html"));
+            UI_Builder.ref.jeditorpane = (HTMLPane) Memory.pull(new Name("//jeditorpane/html"));
         }
     }
 
-    public static class Builder_003
+    public static class BuildStep_003
     {
 
-        public Builder_003()
+        public BuildStep_003()
         {
 
-            Builder.ref.jframe.add(Builder.ref.jpanel_top);
+            UI_Builder.ref.jframe.add(UI_Builder.ref.jpanel_top);
 
-            Builder.ref.jframe.add(Builder.ref.jpanel_bottom);
+            UI_Builder.ref.jframe.add(UI_Builder.ref.jpanel_bottom);
 
-            Builder.ref.jframe.setJMenuBar(Builder.ref.jmenubar);
-
-            //
-
-            Builder.ref.jmenubar.add(Builder.ref.jmenu_file);
-
-            Builder.ref.jmenubar.add(Builder.ref.jmenu_edit);
-
-            Builder.ref.jmenubar.add(Builder.ref.jmenu_view);
+            UI_Builder.ref.jframe.setJMenuBar(UI_Builder.ref.jmenubar);
 
             //
 
-            Builder.ref.jmenu_file.add(Builder.ref.jmenuitem_file_1);
+            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_file);
 
-            Builder.ref.jmenu_file.add(Builder.ref.jmenuitem_file_2);
+            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_edit);
 
-            //
-
-            Builder.ref.jmenu_edit.add(Builder.ref.jmenuitem_edit_1);
-
-            Builder.ref.jmenu_edit.add(Builder.ref.jmenuitem_edit_2);
+            UI_Builder.ref.jmenubar.add(UI_Builder.ref.jmenu_view);
 
             //
 
-            Builder.ref.jmenu_view.add(Builder.ref.jmenuitem_view_1);
+            UI_Builder.ref.jmenu_file.add(UI_Builder.ref.jmenuitem_file_1);
 
-            Builder.ref.jmenu_view.add(Builder.ref.jmenuitem_view_2);
-
-            //
-
-            Builder.ref.jpanel_top.add(Builder.ref.jbutton_back, BorderLayout.NORTH);
-
-            Builder.ref.jpanel_top.add(Builder.ref.jbutton_halt, BorderLayout.EAST);
-
-            Builder.ref.jpanel_top.add(Builder.ref.jbutton_reload);
-
-            Builder.ref.jpanel_top.add(Builder.ref.jbutton_forward);
-
-            Builder.ref.jpanel_top.add(Builder.ref.jtextpane_url);
+            UI_Builder.ref.jmenu_file.add(UI_Builder.ref.jmenuitem_file_2);
 
             //
 
-            Builder.ref.jpanel_bottom.add(Builder.ref.jeditorpane);
+            UI_Builder.ref.jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_1);
+
+            UI_Builder.ref.jmenu_edit.add(UI_Builder.ref.jmenuitem_edit_2);
+
+            //
+
+            UI_Builder.ref.jmenu_view.add(UI_Builder.ref.jmenuitem_view_1);
+
+            UI_Builder.ref.jmenu_view.add(UI_Builder.ref.jmenuitem_view_2);
+
+            //
+
+            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_back, BorderLayout.NORTH);
+
+            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_halt, BorderLayout.EAST);
+
+            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_reload);
+
+            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jbutton_forward);
+
+            UI_Builder.ref.jpanel_top.add(UI_Builder.ref.jtextpane_url);
+
+            //
+
+            UI_Builder.ref.jpanel_bottom.add(UI_Builder.ref.jeditorpane);
 
         }
     }
 
-    public static class Builder_004
+    public static class BuildStep_004
     {
 
-        public Builder_004()
+        public BuildStep_004()
         {
-            Builder.ref.jframe.setSize(new Dimension(1000, 600));
+            UI_Builder.ref.jframe.setSize(new Dimension(1000, 600));
 
-            Builder.ref.jframe.setLayout(new FlowLayout());
+            UI_Builder.ref.jframe.setLayout(new FlowLayout());
 
-            Builder.ref.jframe.setMinimumSize(new Dimension(800, 600));
+            UI_Builder.ref.jframe.setMinimumSize(new Dimension(800, 600));
 
-            Builder.ref.jframe.setVisible(true);
-
-            //
-
-            Builder.ref.jpanel_top.setSize(new Dimension(800, 200));
-
-            Builder.ref.jpanel_top.setBackground(Color.GRAY.darker());
-
-            Builder.ref.jtextpane_url.setPreferredSize(new Dimension(600, 20));
-
-            Builder.ref.jpanel_bottom.setSize(new Dimension(800, 400));
-
-            Builder.ref.jpanel_bottom.setBackground(Color.GRAY.brighter());
+            UI_Builder.ref.jframe.setVisible(true);
 
             //
 
-            Builder.ref.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            UI_Builder.ref.jpanel_top.setSize(new Dimension(800, 200));
+
+            UI_Builder.ref.jpanel_top.setBackground(Color.GRAY.darker());
+
+            UI_Builder.ref.jtextpane_url.setPreferredSize(new Dimension(600, 20));
+
+            UI_Builder.ref.jpanel_bottom.setSize(new Dimension(800, 400));
+
+            UI_Builder.ref.jpanel_bottom.setBackground(Color.GRAY.brighter());
+
+            //
+
+            UI_Builder.ref.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             //this.jeditorpane.setContentType();
 
-            Builder.ref.jeditorpane.setContentType("text/html");
+            UI_Builder.ref.jeditorpane.setContentType("text/html");
 
-            Builder.ref.jeditorpane.setText("<html>\n" +
+            UI_Builder.ref.jeditorpane.setText("<html>\n" +
                     "   <head>\n" +
                     "      <title>Swing Tester</title>\n" +
                     "   </head>\n" +
