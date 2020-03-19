@@ -306,17 +306,17 @@ public class UI_Builder
                     "</html>");
 
             UI_Builder.ref.jbutton_back.setBackground(Color.white);
-            UI_Builder.ref.jbutton_back.setBorder(null);
+            //UI_Builder.ref.jbutton_back.setBorder(null);
 
 
             UI_Builder.ref.jbutton_forward.setBackground(Color.white);
-            UI_Builder.ref.jbutton_forward.setBorder(null);
+            //UI_Builder.ref.jbutton_forward.setBorder(null);
 
             UI_Builder.ref.jbutton_halt.setBackground(Color.white);
-            UI_Builder.ref.jbutton_halt.setBorder(null);
+            //UI_Builder.ref.jbutton_halt.setBorder(null);
 
             UI_Builder.ref.jbutton_reload.setBackground(Color.white);
-            UI_Builder.ref.jbutton_reload.setBorder(null);
+            //UI_Builder.ref.jbutton_reload.setBorder(null);
         }
     }
 }
