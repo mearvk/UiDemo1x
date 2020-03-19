@@ -153,6 +153,10 @@ public class UI_Builder
             UI_Builder.ref.jpanel_bottom = (JPanelBottom) Memory.pull(new Name("//jpanel/bottom"));
 
             UI_Builder.ref.jeditorpane = (JEditorPaneHtml) Memory.pull(new Name("//jeditorpane/html"));
+
+            //
+
+
         }
     }
 
@@ -209,9 +213,9 @@ public class UI_Builder
 
             jpanel_top.add(UI_Builder.ref.jbutton_back);
 
-            jpanel_top.add(UI_Builder.ref.jbutton_halt);
+            //jpanel_top.add(UI_Builder.ref.jbutton_halt);
 
-            jpanel_top.add(UI_Builder.ref.jbutton_reload);
+            //jpanel_top.add(UI_Builder.ref.jbutton_reload);
 
             jpanel_top.add(UI_Builder.ref.jbutton_forward);
 
@@ -233,11 +237,11 @@ public class UI_Builder
         {
             JFrame jframe = (JFrame) Memory.pull(new Name("//jframe"));
 
-            jframe.setSize(new Dimension(1000, 600));
+            jframe.setSize(new Dimension(1200, 800));
 
             jframe.setLayout(new FlowLayout());
 
-            jframe.setMinimumSize(new Dimension(800, 600));
+            jframe.setMinimumSize(new Dimension(1200, 800));
 
             jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -300,6 +304,19 @@ public class UI_Builder
                     "      </ul>\n" +
                     "   </body>\n" +
                     "</html>");
+
+            UI_Builder.ref.jbutton_back.setBackground(Color.white);
+            UI_Builder.ref.jbutton_back.setBorder(null);
+
+
+            UI_Builder.ref.jbutton_forward.setBackground(Color.white);
+            UI_Builder.ref.jbutton_forward.setBorder(null);
+
+            UI_Builder.ref.jbutton_halt.setBackground(Color.white);
+            UI_Builder.ref.jbutton_halt.setBorder(null);
+
+            UI_Builder.ref.jbutton_reload.setBackground(Color.white);
+            UI_Builder.ref.jbutton_reload.setBorder(null);
         }
     }
 }
