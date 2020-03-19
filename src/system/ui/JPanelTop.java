@@ -15,10 +15,22 @@ public class JPanelTop extends JPanel
 
         int width = jframe.getWidth();
 
-        int height = jframe.getHeight() * 2 / 10;
+        int height = jframe.getHeight() * 1 / 10;
 
         System.out.println("Parent: "+getParent());
 
         return new Dimension(width, height);
+    }
+
+    @Override
+    public Dimension getMinimumSize()
+    {
+        return new Dimension(800,100);
+    }
+
+    @Override
+    public Dimension getMaximumSize()
+    {
+        return new Dimension(1920,1200);
     }
 }

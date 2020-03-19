@@ -83,7 +83,7 @@ public class Build
 
         Memory.push(new Name("//jmenu/view/jmenuitem/2"), new JMenu("Item 2"));
 
-        Memory.push(new Name("//jtextpane/url"), new JTextPane());
+        Memory.push(new Name("//jtextpane/url"), new JTextPaneURL());
 
         Memory.push(new Name("//jbutton/back"), new JButton("back"));
 
@@ -92,6 +92,8 @@ public class Build
         Memory.push(new Name("//jbutton/reload"), new JButton("reload"));
 
         Memory.push(new Name("//jbutton/halt"), new JButton("halt"));
+
+        Memory.push(new Name("//jeditorpane/html"), new JEditorPane());
 
         //
 
@@ -172,8 +174,6 @@ public class Build
 
         //
 
-
-
         this.jpanel_top.add(this.jbutton_back, BorderLayout.NORTH);
 
         this.jpanel_top.add(this.jbutton_halt, BorderLayout.EAST);
@@ -184,6 +184,10 @@ public class Build
 
         this.jpanel_top.add(this.jtextpane_url);
 
+        //
+
+        this.jpanel_bottom.add(this.jeditorpane);
+
         return this;
     }
 
@@ -193,26 +197,22 @@ public class Build
 
         this.jframe.setLayout(new FlowLayout());
 
+        this.jframe.setMinimumSize(new Dimension(800,600));
+
         this.jpanel_top.setSize(new Dimension(800, 200));
 
-        this.jpanel_top.setBackground(Color.GRAY);
+        this.jpanel_top.setBackground(Color.GRAY.darker());
 
         this.jtextpane_url.setPreferredSize(new Dimension(600, 20));
 
         this.jpanel_bottom.setSize(new Dimension(800, 400));
 
-        this.jpanel_bottom.setBackground(Color.GRAY);
+        this.jpanel_bottom.setBackground(Color.GRAY.brighter());
 
         this.jframe.setVisible(true);
 
         this.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         return this;
-
-
     }
-
-
 }
-
-

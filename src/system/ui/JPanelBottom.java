@@ -15,10 +15,20 @@ public class JPanelBottom extends JPanel
 
         int width = jframe.getWidth();
 
-        int height = jframe.getHeight() * 8 / 10;
-
-        System.out.println("Parent: "+getParent());
+        int height = jframe.getHeight() * 9 / 10;
 
         return new Dimension(width, height);
+    }
+
+    @Override
+    public Dimension getMinimumSize()
+    {
+        return new Dimension(800,500);
+    }
+
+    @Override
+    public Dimension getMaximumSize()
+    {
+        return new Dimension(1920,1200);
     }
 }

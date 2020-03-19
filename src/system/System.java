@@ -6,6 +6,8 @@ import system.memory.Memory;
 import system.naming.Name;
 import system.ui.Build;
 
+import javax.swing.*;
+
 public class System
 {
     public Name name;
@@ -17,6 +19,21 @@ public class System
     public static void main(String...args)
     {
         System system = new System(new Name("//system"));
+
+        //
+
+        try
+        {
+            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+
+            //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
         //
 
