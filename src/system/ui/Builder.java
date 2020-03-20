@@ -235,9 +235,15 @@ public class Builder
 
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("URL TODO", new ImageIcon(""), Builder.ref.jeditorpane, "Tooltip TODO");
+            jtabbedpane.add(new CustomJTabbedPane.ButtonTabComponent(jtabbedpane));
 
-            jtabbedpane.addTab("+", new JPanel());
+            jtabbedpane.addTab("Test", new CustomJTabbedPane.ButtonTabComponent(jtabbedpane));
+
+            jtabbedpane.setTabComponentAt(1, new CustomJTabbedPane.ButtonTabComponent(jtabbedpane));
+
+            //jtabbedpane.addTab("URL TODO", new ImageIcon(""), new CustomJTabbedPane.ButtonTabComponent(jtabbedpane), "Tooltip TODO");
+
+            jtabbedpane.addTab("+", new CustomJTabbedPane.ButtonTabComponent(jtabbedpane));
         }
     }
 
