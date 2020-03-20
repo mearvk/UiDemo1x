@@ -102,13 +102,13 @@ public class Builder
 
             References.push(new Name("//jtextfield/url"), new CustomJTextField_url());
 
-            References.push(new Name("//jbutton/back"), new CustomJButton_back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-16.png")));
+            References.push(new Name("//jbutton/back"), new CustomJButton_back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-12.png")));
 
-            References.push(new Name("//jbutton/forward"), new CustomJButton_forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-16.png")));
+            References.push(new Name("//jbutton/forward"), new CustomJButton_forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-12.png")));
 
-            References.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\reload-16.png")));
+            //References.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\reload-16.png")));
 
-            References.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\halt-16.png")));
+            //References.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\halt-16.png")));
 
             References.push(new Name("//jtabbedpane"), new CustomJTabbedPane());
 
@@ -235,7 +235,11 @@ public class Builder
 
             jtabbedpane.addTab("+", new CustomJPanel_empty());
 
-            jtabbedpane.setTabComponentAt(0, new CustomJTabbedPane.CloseTabButton(jtabbedpane));
+            CustomJButton_closetab jbutton = new CustomJButton_closetab();
+
+            jbutton.addActionListener(jbutton.new ClickListener());
+
+            jtabbedpane.setTabComponentAt(0, jbutton);
         }
     }
 
@@ -323,6 +327,8 @@ public class Builder
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
             jtabbedpane.addChangeListener(new CustomJTabbedPane.CustomChangeListener());
+
+
 
             //
         }
