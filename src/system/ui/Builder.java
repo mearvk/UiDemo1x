@@ -2,6 +2,7 @@ package system.ui;
 
 import system.memory.References;
 import system.naming.Name;
+import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -235,9 +236,11 @@ public class Builder
 
             jtabbedpane.addTab("+", new CustomJPanel_empty());
 
-            CustomJButton_closetab jbutton = new CustomJButton_closetab();
+            CustomJButton_closetab jbutton;
 
-            jbutton.addActionListener(jbutton.new ClickListener());
+            jbutton = new CustomJButton_closetab("");
+
+            jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(jtabbedpane.indexOfTabComponent(jbutton)));
 
             jtabbedpane.setTabComponentAt(0, jbutton);
         }

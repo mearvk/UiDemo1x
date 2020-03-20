@@ -2,13 +2,12 @@ package system.ui;
 
 import system.memory.References;
 import system.naming.Name;
+import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
-import java.awt.event.*;
 
 public class CustomJTabbedPane extends JTabbedPane
 {
@@ -41,11 +40,30 @@ public class CustomJTabbedPane extends JTabbedPane
 
                 jtabbedpane.addTab("TODO", new CustomJPanel_homepage());
 
-                jtabbedpane.setTabComponentAt(index+1, new CustomJButton_closetab());
+                CustomJButton_closetab jbutton;
+
+                jbutton = new CustomJButton_closetab("");
+
+                //int quo = jtabbedpane.getSelectedIndex();
+
+                jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(index));
+
+                jtabbedpane.setTabComponentAt(index+1, jbutton);
 
                 jtabbedpane.remove(index);
 
                 jtabbedpane.addTab("+", new JPanel());
+
+                //
+
+
+                //CustomJButton_closetab jbutton;
+
+                //jbutton = new CustomJButton_closetab("");
+
+                //jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(jtabbedpane.indexOfTabComponent(jbutton)));
+
+                //jtabbedpane.setTabComponentAt(0, jbutton);
             }
         }
     }

@@ -1,0 +1,59 @@
+package system.ui.listeners.mouse;
+
+import system.memory.References;
+import system.naming.Name;
+import system.ui.CustomJTabbedPane;
+
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+public class CustomMouseListener_CloseTabOnClick implements MouseListener
+{
+    public Integer tabindex;
+
+    public CustomMouseListener_CloseTabOnClick(Integer tabindex)
+    {
+        this.tabindex = tabindex;
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent mouseEvent)
+    {
+        CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+
+        if(tabindex==-1 && jtabbedpane.getTabCount()==2)
+        {
+            jtabbedpane.remove(0);
+
+            jtabbedpane.removeTabAt(0);
+        }
+        else
+        {
+            System.out.println("Removing tab at index "+tabindex);
+
+            jtabbedpane.removeTabAt(this.tabindex);
+
+            jtabbedpane.remove(this.tabindex);
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent mouseEvent) {
+
+    }
+}
