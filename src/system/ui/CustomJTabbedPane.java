@@ -39,7 +39,9 @@ public class CustomJTabbedPane extends JTabbedPane
             {
                 CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-                jtabbedpane.addTab("Home Page", new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\halt_8.png"), new CustomJEditorPane(), "Tooltip TODO");
+                jtabbedpane.addTab("Home", new CustomJPanel_homepage());
+
+                jtabbedpane.setTabComponentAt(index+1, new CustomJTabbedPane.CloseTabButton(jtabbedpane));
 
                 jtabbedpane.remove(index);
 
@@ -50,15 +52,19 @@ public class CustomJTabbedPane extends JTabbedPane
 
     public static class CloseTabButton extends JPanel
     {
-        private final JTabbedPane pane;
+        private final JTabbedPane jtabbedpane;
 
-        public CloseTabButton(final JTabbedPane pane) {
+        public CloseTabButton(final JTabbedPane pane)
+        {
             //unset default FlowLayout' gaps
             super(new FlowLayout(FlowLayout.LEFT, 0, 0));
-            if (pane == null) {
+
+            if (pane == null)
+            {
                 throw new NullPointerException("TabbedPane is null");
             }
-            this.pane = pane;
+
+            this.jtabbedpane = pane;
             setOpaque(false);
 
             //make JLabel read titles from JTabbedPane
@@ -82,8 +88,10 @@ public class CustomJTabbedPane extends JTabbedPane
             setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
         }
 
-        private class TabButton extends JButton implements ActionListener {
-            public TabButton() {
+        private class TabButton extends JButton implements ActionListener
+        {
+            public TabButton()
+            {
                 int size = 17;
                 setPreferredSize(new Dimension(size, size));
                 setToolTipText("close this tab");
@@ -97,16 +105,21 @@ public class CustomJTabbedPane extends JTabbedPane
                 setBorderPainted(false);
                 //Making nice rollover effect
                 //we use the same listener for all buttons
-                addMouseListener(buttonMouseListener);
+                addMouseListener(mouse_listener);
                 setRolloverEnabled(true);
                 //Close the proper tab by clicking the button
                 addActionListener(this);
             }
 
-            public void actionPerformed(ActionEvent e) {
-                int i = pane.indexOfTabComponent(CloseTabButton.this);
-                if (i != -1) {
-                    pane.remove(i);
+            public void actionPerformed(ActionEvent e)
+            {
+                int i = jtabbedpane.indexOfTabComponent(CloseTabButton.this);
+
+                if (i != -1)
+                {
+                    jtabbedpane.remove(i);
+
+                    System.out.println(i+" was index");
                 }
             }
 
@@ -134,7 +147,7 @@ public class CustomJTabbedPane extends JTabbedPane
             }
         }
 
-        private final static MouseListener buttonMouseListener = new MouseAdapter() {
+        private final static MouseListener mouse_listener = new MouseAdapter() {
             public void mouseEntered(MouseEvent e) {
                 Component component = e.getComponent();
                 if (component instanceof AbstractButton) {

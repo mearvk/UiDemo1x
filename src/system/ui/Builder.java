@@ -217,10 +217,6 @@ public class Builder
 
             jpanel_top.add(Builder.ref.jbutton_back);
 
-            //jpanel_top.add(UI_Builder.ref.jbutton_halt);
-
-            //jpanel_top.add(UI_Builder.ref.jbutton_reload);
-
             jpanel_top.add(Builder.ref.jbutton_forward);
 
             jpanel_top.add(Builder.ref.jtextfield_url);
@@ -235,13 +231,11 @@ public class Builder
 
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("", new CustomJTabbedPane.CloseTabButton(jtabbedpane));
+            jtabbedpane.addTab("Home", new CustomJPanel_homepage());
+
+            jtabbedpane.addTab("+", new CustomJPanel_empty());
 
             jtabbedpane.setTabComponentAt(0, new CustomJTabbedPane.CloseTabButton(jtabbedpane));
-
-            //jtabbedpane.addTab("URL TODO", new ImageIcon(""), new CustomJTabbedPane.ButtonTabComponent(jtabbedpane), "Tooltip TODO");
-
-            jtabbedpane.addTab("+", new CustomJTabbedPane.CloseTabButton(jtabbedpane));
         }
     }
 

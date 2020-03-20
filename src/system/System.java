@@ -39,19 +39,13 @@ public class System
     {
         References references = new References(new Name("//references"));
 
+        References.push(name,this);
+
         //
 
         System.ref = this;
 
         System.ref.instance = new SystemInstance(new Name("//system/instance"));
-
-        References.push(name, this);
-
-        //
-
-        //References.push(references.name, references);
-
-        References.push(name,this);
     }
 }
 
