@@ -48,11 +48,11 @@ public class CustomJTabbedPane extends JTabbedPane
         }
     }
 
-    public static class ButtonTabComponent extends JPanel
+    public static class CloseTabButton extends JPanel
     {
         private final JTabbedPane pane;
 
-        public ButtonTabComponent(final JTabbedPane pane) {
+        public CloseTabButton(final JTabbedPane pane) {
             //unset default FlowLayout' gaps
             super(new FlowLayout(FlowLayout.LEFT, 0, 0));
             if (pane == null) {
@@ -64,7 +64,7 @@ public class CustomJTabbedPane extends JTabbedPane
             //make JLabel read titles from JTabbedPane
             JLabel label = new JLabel() {
                 public String getText() {
-                    int i = pane.indexOfTabComponent(ButtonTabComponent.this);
+                    int i = pane.indexOfTabComponent(CloseTabButton.this);
                     if (i != -1) {
                         return pane.getTitleAt(i);
                     }
@@ -104,7 +104,7 @@ public class CustomJTabbedPane extends JTabbedPane
             }
 
             public void actionPerformed(ActionEvent e) {
-                int i = pane.indexOfTabComponent(ButtonTabComponent.this);
+                int i = pane.indexOfTabComponent(CloseTabButton.this);
                 if (i != -1) {
                     pane.remove(i);
                 }
