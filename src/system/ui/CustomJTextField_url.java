@@ -1,17 +1,17 @@
 package system.ui;
 
-import system.memory.Reference;
+import system.memory.References;
 import system.naming.Name;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class JTextFieldURL extends JTextField
+public class CustomJTextField_url extends JTextField
 {
     @Override
     public Dimension getPreferredSize()
     {
-        JFrame jframe = (JFrame) Reference.pull(new Name("//jframe"));
+        JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
 
         return new Dimension(jframe.getWidth()-320, 25);
     }

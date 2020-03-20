@@ -2,9 +2,9 @@ package system;
 
 
 import system.instance.SystemInstance;
-import system.memory.Reference;
+import system.memory.References;
 import system.naming.Name;
-import system.ui.UI_Builder;
+import system.ui.Builder;
 
 public class System
 {
@@ -20,22 +20,22 @@ public class System
 
         //
 
-        UI_Builder build = new UI_Builder();
+        Builder build = new Builder();
 
-        build.buildstep_001 = new UI_Builder.BuildStep_001();
+        build.buildstep_001 = new Builder.BuildStep_001();
 
-        build.buildstep_002 = new UI_Builder.BuildStep_002();
+        build.buildstep_002 = new Builder.BuildStep_002();
 
-        build.buildstep_003 = new UI_Builder.BuildStep_003();
+        build.buildstep_003 = new Builder.BuildStep_003();
 
-        build.buildstep_004 = new UI_Builder.BuildStep_004();
+        build.buildstep_004 = new Builder.BuildStep_004();
 
         build = null;
     }
 
     public System(Name name)
     {
-        Reference reference = new Reference(new Name("//memory"));
+        References references = new References(new Name("//memory"));
 
         //
 
@@ -43,13 +43,13 @@ public class System
 
         System.ref.instance = new SystemInstance(new Name("//system/instance"));
 
-        Reference.push(name, this);
+        References.push(name, this);
 
         //
 
-        Reference.push(reference.name, reference);
+        References.push(references.name, references);
 
-        Reference.push(name,this);
+        References.push(name,this);
     }
 }
 
