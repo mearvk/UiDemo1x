@@ -3,9 +3,9 @@ package system.ui;
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomJButton_back extends JButton
+public class CustomJButton_Back extends JButton
 {
-    public CustomJButton_back(ImageIcon imageicon)
+    public CustomJButton_Back(ImageIcon imageicon)
     {
         super(imageicon);
     }

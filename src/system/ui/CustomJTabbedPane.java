@@ -38,11 +38,11 @@ public class CustomJTabbedPane extends JTabbedPane
             {
                 CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-                jtabbedpane.addTab("TODO", new CustomJPanel_homepage());
+                jtabbedpane.addTab("TODO", new CustomJPanel_HomePage());
 
-                CustomJButton_closetab jbutton;
+                CustomJButton_CloseTab jbutton;
 
-                jbutton = new CustomJButton_closetab("");
+                jbutton = new CustomJButton_CloseTab("");
 
                 //int quo = jtabbedpane.getSelectedIndex();
 

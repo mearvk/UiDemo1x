@@ -6,7 +6,7 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomJTextField_url extends JTextField
+public class CustomJTextField_Url extends JTextField
 {
     @Override
     public Dimension getPreferredSize()

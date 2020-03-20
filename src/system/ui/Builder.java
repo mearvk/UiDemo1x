@@ -34,19 +34,19 @@ public class Builder
 
     public JMenuItem jmenuitem_view_2;
 
-    public CustomJPanel_top jpanel_top;
+    public CustomJPanel_Top jpanel_top;
 
     public JTextField jtextfield_url;
 
-    public CustomJButton_back jbutton_back;
+    public CustomJButton_Back jbutton_back;
 
-    public CustomJButton_forward jbutton_forward;
+    public CustomJButton_Forward jbutton_forward;
 
     public JButton jbutton_reload;
 
     public JButton jbutton_halt;
 
-    public CustomJPanel_bottom jpanel_bottom;
+    public CustomJPanel_Bottom jpanel_bottom;
 
     public JTabbedPane jtabbedpane;
 
@@ -77,9 +77,9 @@ public class Builder
         {
             References.push(new Name("//jframe"), new JFrame());
 
-            References.push(new Name("//jpanel/top"), new CustomJPanel_top());
+            References.push(new Name("//jpanel/top"), new CustomJPanel_Top());
 
-            References.push(new Name("//jpanel/bottom"), new CustomJPanel_bottom());
+            References.push(new Name("//jpanel/bottom"), new CustomJPanel_Bottom());
 
             References.push(new Name("//jmenubar"), new JMenuBar());
 
@@ -101,11 +101,11 @@ public class Builder
 
             References.push(new Name("//jmenu/view/jmenuitem/2"), new JMenuItem("Item 2"));
 
-            References.push(new Name("//jtextfield/url"), new CustomJTextField_url());
+            References.push(new Name("//jtextfield/url"), new CustomJTextField_Url());
 
-            References.push(new Name("//jbutton/back"), new CustomJButton_back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-12.png")));
+            References.push(new Name("//jbutton/back"), new CustomJButton_Back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-12.png")));
 
-            References.push(new Name("//jbutton/forward"), new CustomJButton_forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-12.png")));
+            References.push(new Name("//jbutton/forward"), new CustomJButton_Forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-12.png")));
 
             //References.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\reload-16.png")));
 
@@ -145,19 +145,19 @@ public class Builder
 
             Builder.ref.jmenuitem_view_2 = (JMenuItem) References.pull(new Name("//jmenu/view/jmenuitem/2"));
 
-            Builder.ref.jpanel_top = (CustomJPanel_top) References.pull(new Name("//jpanel/top"));
+            Builder.ref.jpanel_top = (CustomJPanel_Top) References.pull(new Name("//jpanel/top"));
 
             Builder.ref.jtextfield_url = (JTextField) References.pull(new Name("//jtextfield/url"));
 
-            Builder.ref.jbutton_back = (CustomJButton_back) References.pull(new Name("//jbutton/back"));
+            Builder.ref.jbutton_back = (CustomJButton_Back) References.pull(new Name("//jbutton/back"));
 
-            Builder.ref.jbutton_forward = (CustomJButton_forward) References.pull(new Name("//jbutton/forward"));
+            Builder.ref.jbutton_forward = (CustomJButton_Forward) References.pull(new Name("//jbutton/forward"));
 
             Builder.ref.jbutton_reload = (JButton) References.pull(new Name("//jbutton/reload"));
 
             Builder.ref.jbutton_halt = (JButton) References.pull(new Name("//jbutton/halt"));
 
-            Builder.ref.jpanel_bottom = (CustomJPanel_bottom) References.pull(new Name("//jpanel/bottom"));
+            Builder.ref.jpanel_bottom = (CustomJPanel_Bottom) References.pull(new Name("//jpanel/bottom"));
 
             Builder.ref.jtabbedpane = (JTabbedPane) References.pull(new Name("//jtabbedpane"));
 
@@ -214,7 +214,7 @@ public class Builder
 
             //
 
-            CustomJPanel_top jpanel_top = (CustomJPanel_top) References.pull(new Name("//jpanel/top"));
+            CustomJPanel_Top jpanel_top = (CustomJPanel_Top) References.pull(new Name("//jpanel/top"));
 
             jpanel_top.add(Builder.ref.jbutton_back);
 
@@ -224,7 +224,7 @@ public class Builder
 
             //
 
-            CustomJPanel_bottom jpanel_bottom = (CustomJPanel_bottom) References.pull(new Name("//jpanel/bottom"));
+            CustomJPanel_Bottom jpanel_bottom = (CustomJPanel_Bottom) References.pull(new Name("//jpanel/bottom"));
 
             jpanel_bottom.add(Builder.ref.jtabbedpane);
 
@@ -232,13 +232,13 @@ public class Builder
 
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("Home", new CustomJPanel_homepage());
+            jtabbedpane.addTab("Home", new CustomJPanel_HomePage());
 
-            jtabbedpane.addTab("+", new CustomJPanel_empty());
+            jtabbedpane.addTab("+", new CustomJPanel_Empty());
 
-            CustomJButton_closetab jbutton;
+            CustomJButton_CloseTab jbutton;
 
-            jbutton = new CustomJButton_closetab("");
+            jbutton = new CustomJButton_CloseTab("");
 
             jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(jtabbedpane.indexOfTabComponent(jbutton)));
 
@@ -271,7 +271,7 @@ public class Builder
 
             //
 
-            CustomJTextField_url jtextfield_url = (CustomJTextField_url) References.pull(new Name("//jtextfield/url"));
+            CustomJTextField_Url jtextfield_url = (CustomJTextField_Url) References.pull(new Name("//jtextfield/url"));
 
             jtextfield_url.setBorder(new BevelBorder(1,Color.WHITE.darker(),Color.WHITE.darker(),Color.GRAY,Color.GRAY));
 

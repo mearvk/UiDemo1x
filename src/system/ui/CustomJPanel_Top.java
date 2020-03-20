@@ -6,7 +6,7 @@ import system.naming.Name;
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomJPanel_bottom extends JPanel
+public class CustomJPanel_Top extends JPanel
 {
     @Override
     public Dimension getPreferredSize()
@@ -15,7 +15,7 @@ public class CustomJPanel_bottom extends JPanel
 
         int width = jframe.getWidth();
 
-        int height = jframe.getHeight() * 9 / 10;
+        int height = 50;
 
         return new Dimension(width, height);
     }
@@ -23,7 +23,7 @@ public class CustomJPanel_bottom extends JPanel
     @Override
     public Dimension getMinimumSize()
     {
-        return new Dimension(800,500);
+        return new Dimension(800,100);
     }
 
     @Override
