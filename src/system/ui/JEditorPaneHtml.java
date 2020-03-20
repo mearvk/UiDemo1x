@@ -1,6 +1,6 @@
 package system.ui;
 
-import system.memory.Memory;
+import system.memory.Reference;
 import system.naming.Name;
 
 import javax.swing.*;
@@ -11,7 +11,7 @@ public class JEditorPaneHtml extends JEditorPane
     @Override
     public Dimension getPreferredSize()
     {
-        JFrame jframe = (JFrame) Memory.pull(new Name("//jframe"));
+        JFrame jframe = (JFrame) Reference.pull(new Name("//jframe"));
 
         int height = jframe.getHeight() - 150;
 

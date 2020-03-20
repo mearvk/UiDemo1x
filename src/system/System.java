@@ -2,7 +2,7 @@ package system;
 
 
 import system.instance.SystemInstance;
-import system.memory.Memory;
+import system.memory.Reference;
 import system.naming.Name;
 import system.ui.UI_Builder;
 
@@ -35,7 +35,7 @@ public class System
 
     public System(Name name)
     {
-        Memory memory = new Memory(new Name("//memory"));
+        Reference reference = new Reference(new Name("//memory"));
 
         //
 
@@ -43,13 +43,13 @@ public class System
 
         System.ref.instance = new SystemInstance(new Name("//system/instance"));
 
-        Memory.push(name, this);
+        Reference.push(name, this);
 
         //
 
-        Memory.push(memory.name, memory);
+        Reference.push(reference.name, reference);
 
-        Memory.push(name,this);
+        Reference.push(name,this);
     }
 }
 
