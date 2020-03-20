@@ -20,22 +20,24 @@ public class System
 
         //
 
-        Builder build = new Builder();
+        system.ui.Builder build = new Builder();
 
-        build.buildstep_001 = new Builder.BuildStep_001();
+        build.buildstep_001 = new Builder.BuildStep_001("references");
 
-        build.buildstep_002 = new Builder.BuildStep_002();
+        build.buildstep_002 = new Builder.BuildStep_002("singleton");
 
-        build.buildstep_003 = new Builder.BuildStep_003();
+        build.buildstep_003 = new Builder.BuildStep_003("hierarchy");
 
-        build.buildstep_004 = new Builder.BuildStep_004();
+        build.buildstep_004 = new Builder.BuildStep_004("miscellany");
+
+        build.buildstep_005 = new Builder.BuildStep_005("listeners");
 
         build = null;
     }
 
     public System(Name name)
     {
-        References references = new References(new Name("//memory"));
+        References references = new References(new Name("//references"));
 
         //
 
@@ -47,7 +49,7 @@ public class System
 
         //
 
-        References.push(references.name, references);
+        //References.push(references.name, references);
 
         References.push(name,this);
     }

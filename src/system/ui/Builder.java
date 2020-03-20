@@ -61,6 +61,8 @@ public class Builder
 
     public BuildStep_004 buildstep_004;
 
+    public BuildStep_005 buildstep_005;
+
     public Builder()
     {
         Builder.ref = this;
@@ -70,7 +72,7 @@ public class Builder
 
     public static class BuildStep_001
     {
-        public BuildStep_001()
+        public BuildStep_001(String description)
         {
             References.push(new Name("//jframe"), new JFrame());
 
@@ -118,7 +120,7 @@ public class Builder
     public static class BuildStep_002
     {
 
-        public BuildStep_002()
+        public BuildStep_002(String description)
         {
             Builder.ref.jframe = (JFrame) References.pull(new Name("//jframe"));
 
@@ -165,7 +167,7 @@ public class Builder
     public static class BuildStep_003
     {
 
-        public BuildStep_003()
+        public BuildStep_003(String description)
         {
             JFrame jframe  = (JFrame) References.pull(new Name("//jframe"));
 
@@ -235,14 +237,14 @@ public class Builder
 
             jtabbedpane.addTab("URL TODO", new ImageIcon(""), Builder.ref.jeditorpane, "Tooltip TODO");
 
-            jtabbedpane.addTab("URL TODO", new ImageIcon(""), Builder.ref.jbutton_back, "Tooltip TODO");
+            jtabbedpane.addTab("+", new JPanel());
         }
     }
 
     public static class BuildStep_004
     {
 
-        public BuildStep_004()
+        public BuildStep_004(String description)
         {
             JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
 
@@ -313,6 +315,18 @@ public class Builder
                     "      </ul>\n" +
                     "   </body>\n" +
                     "</html>");
+        }
+    }
+
+    public static class BuildStep_005
+    {
+        public BuildStep_005(String description)
+        {
+            CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+
+            jtabbedpane.addChangeListener(new CustomJTabbedPane.CustomChangeListener());
+
+            //
         }
     }
 }
