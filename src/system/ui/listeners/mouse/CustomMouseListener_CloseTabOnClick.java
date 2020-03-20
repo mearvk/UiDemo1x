@@ -21,17 +21,19 @@ public class CustomMouseListener_CloseTabOnClick implements MouseListener
     {
         CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
 
-        if(tabindex==-1 && jtabbedpane.getTabCount()==2)
-        {
-            jtabbedpane.remove(0);
+        //
 
-            jtabbedpane.removeTabAt(0);
-        }
+        int tabcount = jtabbedpane.getTabCount();
+
+        //
+
+        if(tabindex==-1) return;
+
         else
         {
             System.out.println("Removing tab at index "+tabindex);
 
-            jtabbedpane.removeTabAt(this.tabindex);
+            //jtabbedpane.removeTabAt(this.tabindex);
 
             jtabbedpane.remove(this.tabindex);
         }

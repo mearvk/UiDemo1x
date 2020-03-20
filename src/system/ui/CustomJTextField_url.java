@@ -13,7 +13,7 @@ public class CustomJTextField_url extends JTextField
     {
         JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
 
-        return new Dimension(jframe.getWidth()-320, 25);
+        return new Dimension(jframe.getWidth()-140, 25);
     }
 
     @Override
