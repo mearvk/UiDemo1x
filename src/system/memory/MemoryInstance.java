@@ -17,19 +17,19 @@ public class MemoryInstance
 
     public MemoryInstance push(Name name, Object object)
     {
-        References.ref.instance.map.put(name.value, object);
+        Bodhi.ref.instance.map.put(name.value, object);
 
         return this;
     }
 
     public Object pull(Name name)
     {
-        return References.ref.instance.map.get(name.value);
+        return Bodhi.ref.instance.map.get(name.value);
     }
 
     public MemoryInstance free(Name name)
     {
-        References.ref.instance.map.put(name.value, null);
+        Bodhi.ref.instance.map.put(name.value, null);
 
         return this;
     }

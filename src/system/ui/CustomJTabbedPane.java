@@ -1,6 +1,6 @@
 package system.ui;
 
-import system.memory.References;
+import system.memory.Bodhi;
 import system.naming.Name;
 import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
 
@@ -14,7 +14,7 @@ public class CustomJTabbedPane extends JTabbedPane
     @Override
     public Dimension getPreferredSize()
     {
-        JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
+        JFrame jframe = (JFrame) Bodhi.pull(new Name("//jframe"));
 
         int width = jframe.getWidth();
 
@@ -36,21 +36,23 @@ public class CustomJTabbedPane extends JTabbedPane
 
             if(selected_index.equalsIgnoreCase("+"))
             {
-                CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+                CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-                jtabbedpane.addTab("TODO", new CustomJPanel_HomePage());
+                jtabbedpane.addTab("TODO", new CustomJPanel___HomePage());
 
-                CustomJButton_CloseTab jbutton;
+                CustomJButton___CloseTabJButton jbutton;
 
-                jbutton = new CustomJButton_CloseTab("");
+                jbutton = new CustomJButton___CloseTabJButton();
 
                 //int quo = jtabbedpane.getSelectedIndex();
 
-                jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(index));
+                //jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(index));
 
                 jtabbedpane.setTabComponentAt(index+1, jbutton);
 
                 jtabbedpane.remove(index);
+
+                jtabbedpane.invalidate();
 
                 jtabbedpane.addTab("+", new JPanel());
 

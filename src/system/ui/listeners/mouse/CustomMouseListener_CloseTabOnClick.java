@@ -1,6 +1,6 @@
 package system.ui.listeners.mouse;
 
-import system.memory.References;
+import system.memory.Bodhi;
 import system.naming.Name;
 import system.ui.CustomJTabbedPane;
 
@@ -19,7 +19,7 @@ public class CustomMouseListener_CloseTabOnClick implements MouseListener
     @Override
     public void mouseClicked(MouseEvent mouseEvent)
     {
-        CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+        CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
         //
 

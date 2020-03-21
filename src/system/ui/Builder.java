@@ -1,6 +1,6 @@
 package system.ui;
 
-import system.memory.References;
+import system.memory.Bodhi;
 import system.naming.Name;
 import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
 
@@ -68,52 +68,52 @@ public class Builder
     {
         Builder.ref = this;
 
-        References.push(new Name("//build"), this);
+        Bodhi.push(new Name("//build"), this);
     }
 
     public static class BuildStep_001
     {
         public BuildStep_001(String description)
         {
-            References.push(new Name("//jframe"), new JFrame());
+            Bodhi.push(new Name("//jframe"), new JFrame());
 
-            References.push(new Name("//jpanel/top"), new CustomJPanel_Top());
+            Bodhi.push(new Name("//jpanel/top"), new CustomJPanel_Top());
 
-            References.push(new Name("//jpanel/bottom"), new CustomJPanel_Bottom());
+            Bodhi.push(new Name("//jpanel/bottom"), new CustomJPanel_Bottom());
 
-            References.push(new Name("//jmenubar"), new JMenuBar());
+            Bodhi.push(new Name("//jmenubar"), new JMenuBar());
 
-            References.push(new Name("//jmenu/file"), new JMenu("File"));
+            Bodhi.push(new Name("//jmenu/file"), new JMenu("File"));
 
-            References.push(new Name("//jmenu/file/jmenuitem/1"), new JMenuItem("Item 1"));
+            Bodhi.push(new Name("//jmenu/file/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            References.push(new Name("//jmenu/file/jmenuitem/2"), new JMenuItem("Item 2"));
+            Bodhi.push(new Name("//jmenu/file/jmenuitem/2"), new JMenuItem("Item 2"));
 
-            References.push(new Name("//jmenu/edit"), new JMenu("Edit"));
+            Bodhi.push(new Name("//jmenu/edit"), new JMenu("Edit"));
 
-            References.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenuItem("Item 1"));
+            Bodhi.push(new Name("//jmenu/edit/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            References.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenuItem("Item 2"));
+            Bodhi.push(new Name("//jmenu/edit/jmenuitem/2"), new JMenuItem("Item 2"));
 
-            References.push(new Name("//jmenu/view"), new JMenu("View"));
+            Bodhi.push(new Name("//jmenu/view"), new JMenu("View"));
 
-            References.push(new Name("//jmenu/view/jmenuitem/1"), new JMenuItem("Item 1"));
+            Bodhi.push(new Name("//jmenu/view/jmenuitem/1"), new JMenuItem("Item 1"));
 
-            References.push(new Name("//jmenu/view/jmenuitem/2"), new JMenuItem("Item 2"));
+            Bodhi.push(new Name("//jmenu/view/jmenuitem/2"), new JMenuItem("Item 2"));
 
-            References.push(new Name("//jtextfield/url"), new CustomJTextField_Url());
+            Bodhi.push(new Name("//jtextfield/url"), new CustomJTextField_Url());
 
-            References.push(new Name("//jbutton/back"), new CustomJButton_Back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-12.png")));
+            Bodhi.push(new Name("//jbutton/back"), new CustomJButton_Back(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\back-12.png")));
 
-            References.push(new Name("//jbutton/forward"), new CustomJButton_Forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-12.png")));
+            Bodhi.push(new Name("//jbutton/forward"), new CustomJButton_Forward(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\forward-12.png")));
 
             //References.push(new Name("//jbutton/reload"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\reload-16.png")));
 
             //References.push(new Name("//jbutton/halt"), new JButton(new ImageIcon("C:\\Users\\Mr. Max Rupplin\\Desktop\\Images\\halt-16.png")));
 
-            References.push(new Name("//jtabbedpane"), new CustomJTabbedPane());
+            Bodhi.push(new Name("//jtabbedpane"), new CustomJTabbedPane());
 
-            References.push(new Name("//jeditorpane/html"), new CustomJEditorPane());
+            Bodhi.push(new Name("//jeditorpane/html"), new CustomJEditorPane());
         }
 
     }
@@ -123,45 +123,45 @@ public class Builder
 
         public BuildStep_002(String description)
         {
-            Builder.ref.jframe = (JFrame) References.pull(new Name("//jframe"));
+            Builder.ref.jframe = (JFrame) Bodhi.pull(new Name("//jframe"));
 
-            Builder.ref.jmenubar = (JMenuBar) References.pull(new Name("//jmenubar"));
+            Builder.ref.jmenubar = (JMenuBar) Bodhi.pull(new Name("//jmenubar"));
 
-            Builder.ref.jmenu_file = (JMenu) References.pull(new Name("//jmenu/file"));
+            Builder.ref.jmenu_file = (JMenu) Bodhi.pull(new Name("//jmenu/file"));
 
-            Builder.ref.jmenuitem_file_1 = (JMenuItem) References.pull(new Name("//jmenu/file/jmenuitem/1"));
+            Builder.ref.jmenuitem_file_1 = (JMenuItem) Bodhi.pull(new Name("//jmenu/file/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_file_2 = (JMenuItem) References.pull(new Name("//jmenu/file/jmenuitem/2"));
+            Builder.ref.jmenuitem_file_2 = (JMenuItem) Bodhi.pull(new Name("//jmenu/file/jmenuitem/2"));
 
-            Builder.ref.jmenu_edit = (JMenu) References.pull(new Name("//jmenu/edit"));
+            Builder.ref.jmenu_edit = (JMenu) Bodhi.pull(new Name("//jmenu/edit"));
 
-            Builder.ref.jmenuitem_edit_1 = (JMenuItem) References.pull(new Name("//jmenu/edit/jmenuitem/1"));
+            Builder.ref.jmenuitem_edit_1 = (JMenuItem) Bodhi.pull(new Name("//jmenu/edit/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_edit_2 = (JMenuItem) References.pull(new Name("//jmenu/edit/jmenuitem/2"));
+            Builder.ref.jmenuitem_edit_2 = (JMenuItem) Bodhi.pull(new Name("//jmenu/edit/jmenuitem/2"));
 
-            Builder.ref.jmenu_view = (JMenu) References.pull(new Name("//jmenu/view"));
+            Builder.ref.jmenu_view = (JMenu) Bodhi.pull(new Name("//jmenu/view"));
 
-            Builder.ref.jmenuitem_view_1 = (JMenuItem) References.pull(new Name("//jmenu/view/jmenuitem/1"));
+            Builder.ref.jmenuitem_view_1 = (JMenuItem) Bodhi.pull(new Name("//jmenu/view/jmenuitem/1"));
 
-            Builder.ref.jmenuitem_view_2 = (JMenuItem) References.pull(new Name("//jmenu/view/jmenuitem/2"));
+            Builder.ref.jmenuitem_view_2 = (JMenuItem) Bodhi.pull(new Name("//jmenu/view/jmenuitem/2"));
 
-            Builder.ref.jpanel_top = (CustomJPanel_Top) References.pull(new Name("//jpanel/top"));
+            Builder.ref.jpanel_top = (CustomJPanel_Top) Bodhi.pull(new Name("//jpanel/top"));
 
-            Builder.ref.jtextfield_url = (JTextField) References.pull(new Name("//jtextfield/url"));
+            Builder.ref.jtextfield_url = (JTextField) Bodhi.pull(new Name("//jtextfield/url"));
 
-            Builder.ref.jbutton_back = (CustomJButton_Back) References.pull(new Name("//jbutton/back"));
+            Builder.ref.jbutton_back = (CustomJButton_Back) Bodhi.pull(new Name("//jbutton/back"));
 
-            Builder.ref.jbutton_forward = (CustomJButton_Forward) References.pull(new Name("//jbutton/forward"));
+            Builder.ref.jbutton_forward = (CustomJButton_Forward) Bodhi.pull(new Name("//jbutton/forward"));
 
-            Builder.ref.jbutton_reload = (JButton) References.pull(new Name("//jbutton/reload"));
+            Builder.ref.jbutton_reload = (JButton) Bodhi.pull(new Name("//jbutton/reload"));
 
-            Builder.ref.jbutton_halt = (JButton) References.pull(new Name("//jbutton/halt"));
+            Builder.ref.jbutton_halt = (JButton) Bodhi.pull(new Name("//jbutton/halt"));
 
-            Builder.ref.jpanel_bottom = (CustomJPanel_Bottom) References.pull(new Name("//jpanel/bottom"));
+            Builder.ref.jpanel_bottom = (CustomJPanel_Bottom) Bodhi.pull(new Name("//jpanel/bottom"));
 
-            Builder.ref.jtabbedpane = (JTabbedPane) References.pull(new Name("//jtabbedpane"));
+            Builder.ref.jtabbedpane = (JTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-            Builder.ref.jeditorpane = (CustomJEditorPane) References.pull(new Name("//jeditorpane/html"));
+            Builder.ref.jeditorpane = (CustomJEditorPane) Bodhi.pull(new Name("//jeditorpane/html"));
         }
     }
 
@@ -170,7 +170,7 @@ public class Builder
 
         public BuildStep_003(String description)
         {
-            JFrame jframe  = (JFrame) References.pull(new Name("//jframe"));
+            JFrame jframe  = (JFrame) Bodhi.pull(new Name("//jframe"));
 
             jframe.add(Builder.ref.jpanel_top);
 
@@ -180,7 +180,7 @@ public class Builder
 
             //
 
-            JMenuBar jmenubar = (JMenuBar) References.pull(new Name("//jmenubar"));
+            JMenuBar jmenubar = (JMenuBar) Bodhi.pull(new Name("//jmenubar"));
 
             jmenubar.add(Builder.ref.jmenu_file);
 
@@ -190,7 +190,7 @@ public class Builder
 
             //
 
-            JMenu jmenu_file = (JMenu) References.pull(new Name("//jmenu/file"));
+            JMenu jmenu_file = (JMenu) Bodhi.pull(new Name("//jmenu/file"));
 
             jmenu_file.add(Builder.ref.jmenuitem_file_1);
 
@@ -198,7 +198,7 @@ public class Builder
 
             //
 
-            JMenu jmenu_edit = (JMenu) References.pull(new Name("//jmenu/edit"));
+            JMenu jmenu_edit = (JMenu) Bodhi.pull(new Name("//jmenu/edit"));
 
             jmenu_edit.add(Builder.ref.jmenuitem_edit_1);
 
@@ -206,7 +206,7 @@ public class Builder
 
             //
 
-            JMenu jmenu_view = (JMenu) References.pull(new Name("//jmenu/view"));
+            JMenu jmenu_view = (JMenu) Bodhi.pull(new Name("//jmenu/view"));
 
             jmenu_view.add(Builder.ref.jmenuitem_view_1);
 
@@ -214,7 +214,7 @@ public class Builder
 
             //
 
-            CustomJPanel_Top jpanel_top = (CustomJPanel_Top) References.pull(new Name("//jpanel/top"));
+            CustomJPanel_Top jpanel_top = (CustomJPanel_Top) Bodhi.pull(new Name("//jpanel/top"));
 
             jpanel_top.add(Builder.ref.jbutton_back);
 
@@ -224,25 +224,19 @@ public class Builder
 
             //
 
-            CustomJPanel_Bottom jpanel_bottom = (CustomJPanel_Bottom) References.pull(new Name("//jpanel/bottom"));
+            CustomJPanel_Bottom jpanel_bottom = (CustomJPanel_Bottom) Bodhi.pull(new Name("//jpanel/bottom"));
 
             jpanel_bottom.add(Builder.ref.jtabbedpane);
 
             //
 
-            CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+            CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("Home", new CustomJPanel_HomePage());
+            jtabbedpane.addTab("", new CustomJPanel___HomePage());
 
-            jtabbedpane.addTab("+", new CustomJPanel_Empty());
+            jtabbedpane.addTab("+", new CustomJPanel___Empty());
 
-            CustomJButton_CloseTab jbutton;
-
-            jbutton = new CustomJButton_CloseTab("");
-
-            jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(jtabbedpane.indexOfTabComponent(jbutton)));
-
-            jtabbedpane.setTabComponentAt(0, jbutton);
+            jtabbedpane.setTabComponentAt(0, new CustomJButton___CloseTabJButton());
         }
     }
 
@@ -251,7 +245,7 @@ public class Builder
 
         public BuildStep_004(String description)
         {
-            JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
+            JFrame jframe = (JFrame) Bodhi.pull(new Name("//jframe"));
 
             jframe.setSize(new Dimension(1200, 800));
 
@@ -265,25 +259,25 @@ public class Builder
 
             //
 
-            JPanel jpanel_top = (JPanel) References.pull(new Name("//jpanel/top"));
+            JPanel jpanel_top = (JPanel) Bodhi.pull(new Name("//jpanel/top"));
 
             jpanel_top.setBackground(Color.WHITE);
 
             //
 
-            CustomJTextField_Url jtextfield_url = (CustomJTextField_Url) References.pull(new Name("//jtextfield/url"));
+            CustomJTextField_Url jtextfield_url = (CustomJTextField_Url) Bodhi.pull(new Name("//jtextfield/url"));
 
             jtextfield_url.setBorder(new BevelBorder(1,Color.WHITE.darker(),Color.WHITE.darker(),Color.GRAY,Color.GRAY));
 
             //
 
-            JPanel jpanel_bottom = (JPanel) References.pull(new Name("//jpanel/bottom"));
+            JPanel jpanel_bottom = (JPanel) Bodhi.pull(new Name("//jpanel/bottom"));
 
             jpanel_bottom.setBackground(Color.WHITE);
 
             //
 
-            JEditorPane jeditorpane = (JEditorPane) References.pull(new Name("//jeditorpane/html"));
+            JEditorPane jeditorpane = (JEditorPane) Bodhi.pull(new Name("//jeditorpane/html"));
 
             jeditorpane.setContentType("text/html");
 
@@ -327,7 +321,7 @@ public class Builder
     {
         public BuildStep_005(String description)
         {
-            CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) References.pull(new Name("//jtabbedpane"));
+            CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
             jtabbedpane.addChangeListener(new CustomJTabbedPane.CustomChangeListener());
 

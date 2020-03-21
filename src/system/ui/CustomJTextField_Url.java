@@ -1,6 +1,6 @@
 package system.ui;
 
-import system.memory.References;
+import system.memory.Bodhi;
 import system.naming.Name;
 
 import javax.swing.*;
@@ -11,7 +11,7 @@ public class CustomJTextField_Url extends JTextField
     @Override
     public Dimension getPreferredSize()
     {
-        JFrame jframe = (JFrame) References.pull(new Name("//jframe"));
+        JFrame jframe = (JFrame) Bodhi.pull(new Name("//jframe"));
 
         return new Dimension(jframe.getWidth()-140, 25);
     }
