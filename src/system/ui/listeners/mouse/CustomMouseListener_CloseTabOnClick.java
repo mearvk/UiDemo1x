@@ -2,7 +2,7 @@ package system.ui.listeners.mouse;
 
 import system.memory.Bodhi;
 import system.naming.Name;
-import system.ui.CustomJTabbedPane;
+import system.ui.custom.CustomJTabbedPane;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

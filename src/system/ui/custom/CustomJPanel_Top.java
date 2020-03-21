@@ -1,4 +1,4 @@
-package system.ui;
+package system.ui.custom;
 
 import system.memory.Bodhi;
 import system.naming.Name;

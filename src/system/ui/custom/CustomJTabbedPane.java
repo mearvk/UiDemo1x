@@ -1,8 +1,7 @@
-package system.ui;
+package system.ui.custom;
 
 import system.memory.Bodhi;
 import system.naming.Name;
-import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -26,8 +25,8 @@ public class CustomJTabbedPane extends JTabbedPane
     public static class CustomChangeListener implements ChangeListener
     {
         @Override
-        public void stateChanged(ChangeEvent changeEvent)
-        {
+        public void stateChanged(ChangeEvent changeEvent) {
+
             JTabbedPane source = (JTabbedPane) changeEvent.getSource();
 
             Integer index =  source.getSelectedIndex();
@@ -38,34 +37,15 @@ public class CustomJTabbedPane extends JTabbedPane
             {
                 CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-                jtabbedpane.addTab("TODO", new CustomJPanel___HomePage());
+                jtabbedpane.addTab("", new CustomJPanel___HomePageJPanel());
 
-                CustomJButton___CloseTabJButton jbutton;
+                jtabbedpane.setTabComponentAt(index+1, new CustomJButton___CloseTabJButton());
 
-                jbutton = new CustomJButton___CloseTabJButton();
-
-                //int quo = jtabbedpane.getSelectedIndex();
-
-                //jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(index));
-
-                jtabbedpane.setTabComponentAt(index+1, jbutton);
+                jtabbedpane.setSelectedIndex(index);
 
                 jtabbedpane.remove(index);
 
-                jtabbedpane.invalidate();
-
-                jtabbedpane.addTab("+", new JPanel());
-
-                //
-
-
-                //CustomJButton_closetab jbutton;
-
-                //jbutton = new CustomJButton_closetab("");
-
-                //jbutton.addMouseListener(new CustomMouseListener_CloseTabOnClick(jtabbedpane.indexOfTabComponent(jbutton)));
-
-                //jtabbedpane.setTabComponentAt(0, jbutton);
+                jtabbedpane.addTab("+", new CustomJPanel___HomePageJPanel());
             }
         }
     }

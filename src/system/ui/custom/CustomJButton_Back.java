@@ -1,11 +1,11 @@
-package system.ui;
+package system.ui.custom;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class CustomJButton_Forward extends JButton
+public class CustomJButton_Back extends JButton
 {
-    public CustomJButton_Forward(ImageIcon imageicon)
+    public CustomJButton_Back(ImageIcon imageicon)
     {
         super(imageicon);
     }
@@ -13,8 +13,6 @@ public class CustomJButton_Forward extends JButton
     @Override
     protected void paintBorder(Graphics g)
     {
-        g.setColor(getForeground());
-
         g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 5, 5);
     }
 }

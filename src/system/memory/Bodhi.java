@@ -29,6 +29,16 @@ public class Bodhi
         return Bodhi.ref.instance.pull(name);
     }
 
+    public static Object run(Runnable runnable)
+    {
+        return runnable;
+    }
+
+    public static Object run(Class<Runnable> runnable)
+    {
+        return runnable;
+    }
+
     public static Bodhi free(Name name)
     {
         Bodhi.ref.instance.free(name);

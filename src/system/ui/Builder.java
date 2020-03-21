@@ -2,7 +2,7 @@ package system.ui;
 
 import system.memory.Bodhi;
 import system.naming.Name;
-import system.ui.listeners.mouse.CustomMouseListener_CloseTabOnClick;
+import system.ui.custom.*;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -232,9 +232,9 @@ public class Builder
 
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("", new CustomJPanel___HomePage());
+            jtabbedpane.addTab("", new CustomJPanel___HomePageJPanel()); //add button with index == SELECTED INDEX in static workaround
 
-            jtabbedpane.addTab("+", new CustomJPanel___Empty());
+            jtabbedpane.addTab("+", new CustomJPanel___EmptyPageJPanel());
 
             jtabbedpane.setTabComponentAt(0, new CustomJButton___CloseTabJButton());
         }
