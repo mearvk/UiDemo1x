@@ -37,7 +37,7 @@ public class CustomJTabbedPane extends JTabbedPane
             {
                 CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-                jtabbedpane.addTab("", new CustomJPanel___HomePageJPanel());
+                jtabbedpane.addTab("Text goes here", new CustomJPanel___HomePageJPanel());
 
                 jtabbedpane.setTabComponentAt(index+1, new CustomJButton___CloseTabJButton());
 

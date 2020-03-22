@@ -232,7 +232,7 @@ public class Builder
 
             CustomJTabbedPane jtabbedpane = (CustomJTabbedPane) Bodhi.pull(new Name("//jtabbedpane"));
 
-            jtabbedpane.addTab("", new CustomJPanel___HomePageJPanel()); //add button with index == SELECTED INDEX in static workaround
+            jtabbedpane.addTab("Text Label", new CustomJPanel___HomePageJPanel()); //add button with index == SELECTED INDEX in static workaround
 
             jtabbedpane.addTab("+", new CustomJPanel___EmptyPageJPanel());
 
